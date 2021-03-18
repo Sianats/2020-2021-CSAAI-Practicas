@@ -1,3 +1,2 @@
-console.log("La página ya está cargada")
-console.log("Ahora es seguro ejecutar el código js")
-console.log("defer....")
+console.log("Aquí comienza tu código JS...")
+console.log("¡Que comiencen los juegos del JS!")
