@@ -1,5 +1,13 @@
 const botones = document.getElementsByClassName("digito");
 
+function digito(value)
+{
+  console.log("Valor: " + value);
+}
+
 for (let boton of botones) {
-    console.log("Boton: " +  boton.value)
+
+  boton.onclick = (ev) => {
+    digito(ev.target.value)
+  }
 }
