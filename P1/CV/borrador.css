@@ -5,4 +5,12 @@ h1 {
     margin-bottom: 0px;
     font-style: oblique;
     }
+
+.cuerpo{
+    display: inline-flex;
+    margin: 20px;
+    font-family: "Comic Sans";
+    font-style: oblique;
+}
+    
   
