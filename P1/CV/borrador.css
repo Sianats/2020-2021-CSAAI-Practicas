@@ -13,7 +13,7 @@ h1 {
     font-style: oblique;
 }
     
-.titulos{
+.apartados{
     font-size: 25px;
     border-bottom: #ffffff 2px solid;
     padding: 10px;
@@ -42,5 +42,5 @@ main{
     margin-top: 0px;
     padding: 10px;
     background-image: url("partitura.png");
-    background-size: 40px;
+    background-size: 470px;
   }
