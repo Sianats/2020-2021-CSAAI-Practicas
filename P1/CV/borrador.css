@@ -42,7 +42,5 @@ main{
     margin-top: 0px;
     padding: 10px;
     background-image: url("partitura.png");
-    background-position: center;
-    background-repeat: repeat-x;
-    flex-wrap: wrap;
+    background-size: 40px;
   }
