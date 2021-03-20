@@ -24,5 +24,13 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-  
+
+aside{
+    margin: 0px; /*margenes*/
+    padding: 0px; /*grandarie(?) letra o nose*/
+    text-align: justify;
+    background-image: url("azul.jpg");
+    background-size: cover;
+  }
+
   
