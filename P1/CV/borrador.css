@@ -33,4 +33,8 @@ aside{
     background-size: cover;
   }
 
+.imagen{
+    position:relative;
+    margin:10px;
+}
   
