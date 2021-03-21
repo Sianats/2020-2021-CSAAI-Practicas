@@ -7,18 +7,22 @@ h1 {
     text-align: start;
     margin: 20px;
     margin-bottom: 0px;
+    background-color: #fff8e7;
     font-style: oblique;
     }
 
 .cuerpo{
     display: inline-flex;
-    margin: 20px;
+    margin: 10px;
     font-family: "Comic Sans";
-    font-style: oblique;
 }
     
+.escudo{
+    margin-left: 140px;
+}
+
 .apartados{
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
     display: inline-flex;
     width: 100%;
@@ -28,15 +32,24 @@ h1 {
     align-items: center;
 }
 
+.parrafos {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 0px;
+    text-align: justify;
+}
+
 .apartadosaside{
-    font-size: 25px;
+    font-size: 20px;
     border-bottom: #fcfcfc 3px solid;
     padding: 10px;
     display: inline-flex;
     width: 100%;
     height: 30px;
-    margin-top: 10px;
     justify-content: center;
+    font-family:"Fantasy";
     align-items: center;
 
 }
@@ -48,18 +61,18 @@ h1 {
 }
 
 aside{
-    margin: 0px; /*margenes*/
-    padding: 0px; /*grandarie(?) letra o nose*/
+    margin: 5px;
     text-align: justify;
     background-color: #62ffc3;
-    background-size: cover;
+    border-right: #62ffc3 5px solid;
+    border-left: #62ffc3 5px solid;
+    width: 40%;
 }
 
 .imagen{
     position: relative;
     margin-left: 50px;
     border-radius: 60%;
-    
     background-color: #fff8e7;
 }
 
@@ -67,5 +80,5 @@ main{
     margin-top: 0px;
     padding: 10px;
     background-image: url("partitura.png");
-    background-size: 470px;
+    background-size: 480px;
   }
