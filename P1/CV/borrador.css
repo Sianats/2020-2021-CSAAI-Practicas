@@ -40,18 +40,26 @@ h1 {
     align-items: center;
 
 }
+
+.piedefoto{
+    font-family: "Comic Sans";
+    font-style: oblique;
+    text-align: center;
+}
+
 aside{
     margin: 0px; /*margenes*/
     padding: 0px; /*grandarie(?) letra o nose*/
     text-align: justify;
     background-color: #62ffc3;
     background-size: cover;
-  }
+}
 
 .imagen{
     position: relative;
     margin-left: 50px;
     border-radius: 60%;
+    
     background-color: #fff8e7;
 }
 
