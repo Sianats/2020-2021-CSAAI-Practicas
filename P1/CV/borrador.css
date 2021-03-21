@@ -5,9 +5,10 @@
 h1 {
     font-size: 50px;
     text-align: start;
-    margin: 20px;
+    margin: 10px;
     margin-bottom: 0px;
     background-color: #fff8e7;
+    border: #fff8e7 10px solid;
     font-style: oblique;
     }
 
@@ -46,7 +47,7 @@ h1 {
     border-bottom: #fcfcfc 3px solid;
     padding: 10px;
     display: inline-flex;
-    width: 100%;
+    width: 94%;
     height: 30px;
     justify-content: center;
     font-family:"Fantasy";
@@ -71,7 +72,7 @@ aside{
 
 .imagen{
     position: relative;
-    margin-left: 50px;
+    margin-left: 70px;
     border-radius: 60%;
     background-color: #fff8e7;
 }
@@ -80,5 +81,5 @@ main{
     margin-top: 0px;
     padding: 10px;
     background-image: url("partitura.png");
-    background-size: 480px;
+    background-size: 850px;
   }
