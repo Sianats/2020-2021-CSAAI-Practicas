@@ -17,6 +17,8 @@ h1 {
     display: inline-flex;
     margin: 10px;
     font-family: "Comic Sans";
+    max-width: 250mm;
+    min-width: 250mm;
 }
     
 .apartados{
@@ -64,7 +66,7 @@ aside{
     background-color: #62ffc3;
     border-right: #62ffc3 5px solid;
     border-left: #62ffc3 5px solid;
-    width: 680px;
+    width: 700px;
 }
 
 .imagen{
@@ -78,5 +80,6 @@ main{
     margin-top: 0px;
     padding: 10px;
     background-image: url("partitura.png");
-    background-size: 850px;
+
+    background-position-y: 70mm;
   }
