@@ -61,12 +61,10 @@ h1 {
 }
 
 aside{
-    margin: 5px;
+    margin: 0px;
     text-align: justify;
     background-color: #62ffc3;
-    border-right: #62ffc3 5px solid;
-    border-left: #62ffc3 5px solid;
-    width: 700px;
+    width: 800px;
 }
 
 .imagen{
@@ -79,7 +77,8 @@ aside{
 main{
     margin-top: 0px;
     padding: 10px;
-    background-image: url("partitura.png");
-
-    background-position-y: 70mm;
+    background-image: url("partitura1.png");
+    background-size: 1400px;
+    background-position-y: 515mm;
+    background-position-x: 1800mm;
   }
