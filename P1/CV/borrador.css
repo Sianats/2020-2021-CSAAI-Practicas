@@ -89,6 +89,6 @@ address{
     text-align: center;
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
-    column-count: auto; /* Para visualizar las tres columnas */
+    column-count: 3; /* Para visualizar las tres columnas */
 
 }
