@@ -83,3 +83,12 @@ main{
     background-position-y: 515mm;
     background-position-x: 1800mm;
   }
+
+address{
+    font-size: 16px;
+    text-align: center;
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3; /* Para visualizar las tres columnas */
+
+  }
