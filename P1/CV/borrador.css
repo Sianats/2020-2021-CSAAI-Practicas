@@ -1,5 +1,5 @@
 @page {
-    size: A4 landscape; 
+    size: 210;
   }
 
 h1 {
@@ -10,6 +10,7 @@ h1 {
     background-color: #fff8e7;
     border: #fff8e7 10px solid;
     font-style: oblique;
+    text-align: center;
     }
 
 .cuerpo{
@@ -18,10 +19,6 @@ h1 {
     font-family: "Comic Sans";
 }
     
-.escudo{
-    margin-left: 140px;
-}
-
 .apartados{
     font-size: 20px;
     padding: 10px;
@@ -67,12 +64,12 @@ aside{
     background-color: #62ffc3;
     border-right: #62ffc3 5px solid;
     border-left: #62ffc3 5px solid;
-    width: 40%;
+    width: 680px;
 }
 
 .imagen{
-    position: relative;
-    margin-left: 70px;
+    display: block;
+    margin: auto;
     border-radius: 60%;
     background-color: #fff8e7;
 }
