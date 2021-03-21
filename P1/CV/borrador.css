@@ -1,3 +1,7 @@
+@page {
+    size: A4 landscape; 
+  }
+
 h1 {
     font-size: 50px;
     text-align: start;
@@ -15,7 +19,6 @@ h1 {
     
 .apartados{
     font-size: 25px;
-    border-bottom: #ffffff 2px solid;
     padding: 10px;
     display: inline-flex;
     width: 100%;
@@ -25,17 +28,31 @@ h1 {
     align-items: center;
 }
 
+.apartadosaside{
+    font-size: 25px;
+    border-bottom: #fcfcfc 3px solid;
+    padding: 10px;
+    display: inline-flex;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
 aside{
     margin: 0px; /*margenes*/
     padding: 0px; /*grandarie(?) letra o nose*/
     text-align: justify;
-    background-image: url("azul.jpg");
+    background-color: #62ffc3;
     background-size: cover;
   }
 
 .imagen{
-    position:relative;
-    margin:10px;
+    position: relative;
+    margin-left: 50px;
+    border-radius: 60%;
+    background-color: #fff8e7;
 }
 
 main{
