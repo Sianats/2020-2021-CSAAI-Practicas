@@ -108,7 +108,7 @@ main{
 address{
     font-size: 15px;
     text-align: center;
-    -webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1; /* Para visualizar las tres columnas */
+    -webkit-column-count: 1; /* Para que se vea bien en Chrome, Safari y Opera */
+    -moz-column-count: 1; /* Para que se vea bien en Firefox */
+    column-count: 1;
 }
