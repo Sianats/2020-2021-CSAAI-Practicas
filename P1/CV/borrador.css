@@ -1,3 +1,4 @@
+/*Estilo del encabezado principal*/
 h1 {
     font-size: 50px;
     margin-top: none;
@@ -10,12 +11,14 @@ h1 {
     text-align: center;
 }
 
+/*Estilo general del cuerpo*/
 .cuerpo{
     display: flex;
     margin: 10px;
     font-family: "Comic Sans";
 }
 
+/*Estilo de los apartados del main*/
 .apartados{
     font-size: 20px;
     padding: 0px;
@@ -27,7 +30,8 @@ h1 {
     align-items: center;
 }
 
-.parrafos {
+/*Estilo para todos parrafos de mi caja lateral*/
+.parrafosaside {
     font-size: 15px;
     display: flex;
     align-items: center;
@@ -36,6 +40,7 @@ h1 {
     text-align: justify;
 }
 
+/*Creo un estilo especifico para mis segundos titulos de la caja lateral*/
 .apartadosaside{
     font-size: 20px;
     border-bottom: #fcfcfc 3px solid;
@@ -48,12 +53,14 @@ h1 {
     align-items: center;
 }
 
+/*creo un estilo para poner una fuente especifica a ese apartado*/
 .piedefoto{
     font-family: "Comic Sans";
     font-style: oblique;
     text-align: center;
 }
 
+/*Estilo general de mi caja lateral*/
 aside{
     max-width: 80mm;
     min-width: 80mm;
@@ -63,6 +70,7 @@ aside{
     width: 800px;
 }
 
+/*Estilo especifico de mi imagen principal*/
 .imagen{
     display: block;
     margin: auto;
@@ -70,6 +78,7 @@ aside{
     background-color: #fff8e7;
 }
 
+/*Estilos para las listas del main*/
 .lista{
     font-size: 15px;
     padding: 0px;
@@ -77,11 +86,13 @@ aside{
     margin-right: 40px;
 }
 
+/*Estilo especifico para los audios*/
 .canciones{
     text-align: center;
     font-size: 15px;
 }
 
+/*Estilo general de mi caja principal*/
 main{
     margin: none;
     padding-left: 10px;
@@ -93,6 +104,7 @@ main{
     min-width: 130mm;
 }
 
+/*Estilo y especificaciones de mi etiqueta address*/
 address{
     font-size: 15px;
     text-align: center;
