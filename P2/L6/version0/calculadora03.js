@@ -18,11 +18,11 @@ suma.onclick = (ev) => {
     display.innerHTML += ev.target.value;
 }
   
-  igual.onclick = (ev) => {
+igual.onclick = (ev) => {
     display.innerHTML = eval(display.innerHTML);
 }
   
-  clear.onclick = (ev) => {
+clear.onclick = (ev) => {
     display.innerHTML = "0";
 }
   
