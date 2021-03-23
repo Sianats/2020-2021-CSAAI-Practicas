@@ -4,30 +4,28 @@ igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
 const ESTADO = {
-    INIT: 0,
-    OP1: 1,
-    OPERATION: 2,
-    OP2_INIT: 3,
-    OP2: 4,
+  INIT: 0,
+  OP1: 1,
+  OPERATION: 2,
+  OP2: 4,
 }
 
 let estado = ESTADO.INIT; 
 
 function digito(ev){
-    if (estado == ESTADO.INIT) {
-        display.innerHTML = ev.target.value;
-        estado = ESTADO.OP1;
-    } else {
-        display.innerHTML += ev.target.value;
-    } 
-    
+  if (estado == ESTADO.INIT) {
+    display.innerHTML = ev.target.value;
+    estado = ESTADO.OP1;
+  } else {
+    display.innerHTML += ev.target.value;
+  }    
 }
 
 
 digitos = document.getElementsByClassName("digito")
 
 for (let boton of digitos) {
-    boton.onclick = digito;
+  boton.onclick = digito;
 }
 
 suma.onclick = (ev) => {
