@@ -5,6 +5,8 @@ clear = document.getElementById("clear")
 borrar = document.getElementById("borrar")
 operador = document.getElementById("operacion")
 resta = document.getElementById ("resta")
+multiplicar = document.getElementById ("multiplicar")
+dividir = document.getElementById ("dividir")
 digitos = document.getElementsByClassName("digito")
 
 const ESTADO = {
@@ -37,6 +39,14 @@ suma.onclick = (ev) => {
 }
 
 resta.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
+}
+
+multiplicar.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
+}
+
+dividir.onclick = (ev) => {
   display.innerHTML += ev.target.value;
 }
 
