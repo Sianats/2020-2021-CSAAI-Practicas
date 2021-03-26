@@ -8,7 +8,7 @@ resta = document.getElementById ("resta")
 multiplicar = document.getElementById ("multiplicar")
 dividir = document.getElementById ("dividir")
 signo = document.getElementById ("signo")
-digitos = document.getElementsByClassName("digito")
+digitos = document.getElementsByClassName("boton")
 
 const ESTADO = {
   INIT: 0,
@@ -28,7 +28,6 @@ function digito(ev){
     display.innerHTML += ev.target.value;
 }
 }
-
 
 for (let boton of digitos) {
   boton.onclick = digito;
