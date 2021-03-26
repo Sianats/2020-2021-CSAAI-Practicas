@@ -33,7 +33,7 @@ for (let boton of digitos) {
   boton.onclick = digito;
 }
 
-operaciones = document.getElementById("operador")
+operador = document.getElementById("operacion")
 
 for (i=0; i<operador.length; i++){
   operador[i].onclick = (ev)=>{
