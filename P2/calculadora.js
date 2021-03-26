@@ -7,6 +7,7 @@ operador = document.getElementById("operacion")
 resta = document.getElementById ("resta")
 multiplicar = document.getElementById ("multiplicar")
 dividir = document.getElementById ("dividir")
+signo = document.getElementById ("signo")
 digitos = document.getElementsByClassName("digito")
 
 const ESTADO = {
@@ -23,11 +24,10 @@ function digito(ev){
   if (estado == ESTADO.INIT) {
     display.innerHTML = ev.target.value;
     estado = ESTADO.OP1;
-  } else {
+  } else{
     display.innerHTML += ev.target.value;
-  }
 }
-
+}
 
 
 for (let boton of digitos) {
@@ -47,6 +47,10 @@ multiplicar.onclick = (ev) => {
 }
 
 dividir.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
+}
+
+signo.onclick = (ev) => {
   display.innerHTML += ev.target.value;
 }
 
