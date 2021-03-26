@@ -8,7 +8,7 @@ resta = document.getElementById ("resta")
 multiplicar = document.getElementById ("multiplicar")
 dividir = document.getElementById ("dividir")
 signo = document.getElementById ("signo")
-digitos = document.getElementsByClassName("boton")
+digitos = document.getElementsByClassName("digito")
 
 const ESTADO = {
   INIT: 0,
@@ -57,9 +57,9 @@ igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
 }
 
-borrar.onclick = () => {
-  display.innerHTML = display.innerHTML.slice(0,-1);
-}
+//borrar.onclick = () => {
+//  display.innerHTML = display.innerHTML.slice(0,-1);
+//}
 
 clear.onclick = () => {
   display.innerHTML = "0";
