@@ -4,6 +4,7 @@ igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 borrar = document.getElementById("borrar")
 operador = document.getElementById("operacion")
+resta = document.getElementById ("resta")
 digitos = document.getElementsByClassName("digito")
 
 const ESTADO = {
@@ -22,7 +23,7 @@ function digito(ev){
     estado = ESTADO.OP1;
   } else {
     display.innerHTML += ev.target.value;
-  }    
+  }
 }
 
 
@@ -31,18 +32,11 @@ for (let boton of digitos) {
   boton.onclick = digito;
 }
 
-
-
-for (i=0; i<operador.length; i++){
-  operador[i].onclick = (ev)=>{
-    if(estado == ESTADO.OP1){
-           display.innerHTML += ev.target.value;
-           estado = ESTADO.OPERATION;
-         }
-      }
+suma.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
 
-suma.onclick = (ev) => {
+resta.onclick = (ev) => {
   display.innerHTML += ev.target.value;
 }
 
