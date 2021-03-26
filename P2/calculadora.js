@@ -6,11 +6,13 @@ resta = document.getElementById("resta")
 multiply = document.getElementById("multiply")
 divide = document.getElementById("divide")
 
+digitos = document.getElementsByClassName("digito")
+
 const ESTADO = {
   INIT: 0,
   OP1: 1,
   OPERATION: 2,
-  OP2: 4,
+  OP2: 3,
 }
 
 let estado = ESTADO.INIT; 
@@ -25,10 +27,21 @@ function digito(ev){
   }    
 }
 
-digitos = document.getElementsByClassName("digito")
+
 
 for (let boton of digitos) {
   boton.onclick = digito;
+}
+
+operaciones = document.getElementById("operador")
+
+for (i=0; i<operador.length; i++){
+  operador[i].onclick = (ev)=>{
+    if(estado == ESTADO.OP1){
+           display.innerHTML += ev.target.value;
+           estado = ESTADO.OPERATION;
+         }
+      }
 }
 
 suma.onclick = (ev) => {
