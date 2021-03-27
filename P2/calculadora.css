@@ -14,7 +14,7 @@ body {
     height: 900px;
     padding: 20px;
     position: relative;
-    width: 463px;
+    width: 453px;
 }
 
 .partearriba {
@@ -85,4 +85,14 @@ body {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(4, 1fr);
+}
+
+.salir {
+    width: 160px;
+    height: 5px;
+    background: white;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 11px;
+    margin-left: 125px;
 }
