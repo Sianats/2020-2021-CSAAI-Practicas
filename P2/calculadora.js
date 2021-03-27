@@ -29,6 +29,7 @@ function digito(ev){
 }
 }
 
+
 for (let boton of digitos) {
   boton.onclick = digito;
 }
@@ -49,17 +50,18 @@ dividir.onclick = (ev) => {
   display.innerHTML += ev.target.value;
 }
 
-signo.onclick = (ev) => {
-  display.innerHTML += ev.target.value;
-}
-
 igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
 }
 
-//borrar.onclick = () => {
-//  display.innerHTML = display.innerHTML.slice(0,-1);
-//}
+borrar.onclick = () => {
+  Array.range(0,10);
+  if (display.innerHTML == range){
+    display.innerHTML = "0";
+  } else {
+    display.innerHTML = display.innerHTML.slice(0,-1);
+  }
+}
 
 clear.onclick = () => {
   display.innerHTML = "0";
