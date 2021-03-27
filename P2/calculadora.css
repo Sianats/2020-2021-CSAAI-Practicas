@@ -11,16 +11,17 @@ body {
     background: black;
     border-radius: 50px;
     color: white;
-    height: 900px;
+    height: 880px;
     padding: 20px;
     position: relative;
-    width: 453px;
+    width: 433px;
 }
 
 .partearriba {
     height: 190px;
     margin-top: -5px;
     margin-left: 4px;
+    margin-bottom: 10px;
 }
 
 .display {
