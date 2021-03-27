@@ -3,11 +3,9 @@ suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 borrar = document.getElementById("borrar")
-operador = document.getElementById("operacion")
 resta = document.getElementById ("resta")
 multiplicar = document.getElementById ("multiplicar")
 dividir = document.getElementById ("dividir")
-signo = document.getElementById ("signo")
 digitos = document.getElementsByClassName("digito")
 
 const ESTADO = {

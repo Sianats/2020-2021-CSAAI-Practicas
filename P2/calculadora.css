@@ -75,7 +75,7 @@ body {
     color: white;
 }
 
-.numero0 {
+#numero0 {
     align-items: center;
     background: #333;
     border-radius: 50%;
