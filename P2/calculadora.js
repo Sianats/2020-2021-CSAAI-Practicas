@@ -55,8 +55,9 @@ igual.onclick = () => {
 }
 
 borrar.onclick = () => {
-  if (display.innerHTML == "0"){
+  if (display.innerHTML.length == 1){
     display.innerHTML = "0";
+    estado = ESTADO.INIT;
   } else {
     display.innerHTML = display.innerHTML.slice(0,-1);
   }
