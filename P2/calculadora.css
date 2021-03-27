@@ -96,3 +96,10 @@ body {
     bottom: 11px;
     margin-left: 125px;
 }
+
+.boton:active,
+.numero0:active,
+.operador:active,
+.funcion:active {
+  filter: brightness(120%);
+}
