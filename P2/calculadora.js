@@ -5,6 +5,7 @@ clear = document.getElementById("clear")
 borrar = document.getElementById("borrar")
 resta = document.getElementById ("resta")
 multiplicar = document.getElementById ("multiplicar")
+operacion = document.getElementsByClassName ("operador")
 dividir = document.getElementById ("dividir")
 digitos = document.getElementsByClassName("digito")
 
@@ -27,6 +28,14 @@ function digito(ev){
 }
 }
 
+for (i=0; i<operacion.length; i++){
+  operacion[i].onclick = (ev)=> {
+    if(estado == ESTADO.OP1){
+           display.innerHTML += ev.target.value;
+           estado = ESTADO.OPERATION;
+    }
+  }
+}
 
 for (let boton of digitos) {
   boton.onclick = digito;
