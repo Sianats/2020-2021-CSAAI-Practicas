@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+p {
+margin-bottom: none;
+}
+
 body {
     font-family: "Helvetica Neue", sans-serif;
     margin: 25px;
@@ -18,20 +22,20 @@ body {
 }
 
 .partearriba {
-    height: 190px;
+    height: 90px;
     margin-top: -5px;
     margin-left: 4px;
-    margin-bottom: 10px;
 }
 
 .display {
     font-size: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-right: 20px;
     text-align: right;
+    height: 135px;
 }
 
-.boton {
+#boton {
     align-items: center;
     background: #333;
     border-radius: 50%;

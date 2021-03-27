@@ -55,8 +55,7 @@ igual.onclick = () => {
 }
 
 borrar.onclick = () => {
-  Array.range(0,10);
-  if (display.innerHTML == range){
+  if (display.innerHTML == "0"){
     display.innerHTML = "0";
   } else {
     display.innerHTML = display.innerHTML.slice(0,-1);
