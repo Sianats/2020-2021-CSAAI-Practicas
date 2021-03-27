@@ -29,3 +29,37 @@ body {
     margin-right: 20px;
     text-align: right;
 }
+
+.boton {
+    align-items: center;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    font-size: 35px;
+    height: 80px;
+    justify-content: center;
+    width: 80px;
+}
+
+.funcion {
+    align-items: center;
+    background: #a5a5a5;
+    border-radius: 50%;
+    display: flex;
+    font-size: 35px;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    color: black;
+}
+
+.operador {
+    align-items: center;
+    background: #f1a33c;
+    border-radius: 50%;
+    display: flex;
+    font-size: 35px;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+}
