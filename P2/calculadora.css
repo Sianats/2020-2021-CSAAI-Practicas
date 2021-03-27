@@ -1,13 +1,13 @@
 * {
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     font-family: "Helvetica Neue", sans-serif;
     margin: 25px;
-  }
+}
 
-  .calculadora {
+.calculadora {
     background: black;
     border-radius: 50px;
     color: white;
@@ -15,10 +15,17 @@
     padding: 20px;
     position: relative;
     width: 463px;
-  }
+}
 
-  .partearriba {
+.partearriba {
     height: 190px;
     margin-top: -5px;
     margin-left: 4px;
-  }
+}
+
+.display {
+    font-size: 100px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: right;
+}
