@@ -1,12 +1,8 @@
 display = document.getElementById("display")
-suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 borrar = document.getElementById("borrar")
-resta = document.getElementById ("resta")
-multiplicar = document.getElementById ("multiplicar")
 operacion = document.getElementsByClassName ("operador")
-dividir = document.getElementById ("dividir")
 digitos = document.getElementsByClassName("digito")
 
 const ESTADO = {
@@ -18,7 +14,6 @@ const ESTADO = {
 
 let estado = ESTADO.INIT; 
 
-// Creo esta función para todos los digitos generales y no tener que declararlos uno por uno
 function digito(ev){
   if (estado == ESTADO.INIT) {
     display.innerHTML = ev.target.value;
@@ -39,22 +34,6 @@ for (i=0; i<operacion.length; i++){
 
 for (let boton of digitos) {
   boton.onclick = digito;
-}
-
-suma.onclick = (ev) => {
-  display.innerHTML += ev.target.value;
-}
-
-resta.onclick = (ev) => {
-  display.innerHTML += ev.target.value;
-}
-
-multiplicar.onclick = (ev) => {
-  display.innerHTML += ev.target.value;
-}
-
-dividir.onclick = (ev) => {
-  display.innerHTML += ev.target.value;
 }
 
 igual.onclick = () => {
