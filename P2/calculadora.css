@@ -101,5 +101,5 @@ body {
 .numero0:active,
 .operador:active,
 .funcion:active {
-  filter: brightness(120%);
+    filter: brightness(120%);
 }
