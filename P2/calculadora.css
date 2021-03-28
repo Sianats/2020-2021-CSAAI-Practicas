@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-p {
-margin-bottom: none;
-}
-
 body {
     font-family: "Helvetica Neue", sans-serif;
     margin: 25px;
@@ -22,7 +18,7 @@ body {
 }
 
 .partearriba {
-    height: 90px;
+    height: 100px;
     margin-top: -5px;
     margin-left: 4px;
 }
@@ -140,6 +136,7 @@ body {
 #numero0:active,
 #operador:active,
 .funcion:active,
+.igual:active,
 #porcentaje:active {
     filter: brightness(120%);
 }

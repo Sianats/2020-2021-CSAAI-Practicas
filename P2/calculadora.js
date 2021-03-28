@@ -28,6 +28,7 @@ for (i=0; i<digitos.length; i++){
 
 igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
+  estado = ESTADO.OP1;
 }
 
 borrar.onclick = () => {
