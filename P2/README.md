@@ -1,7 +1,7 @@
  # Práctica 2
 Mi <a href="https://sianats.github.io/2020-2021-CSAAI-Practicas/P2/calculadora.html">calculadora</a> está inspirada en la calculadora de iphone con todas sus especificaciones*.
 
-*teclado con numeros del 0-9; display para ver el resultado; operaciones basicas tales como sumas, restas, divisiones y multiplicaciones; una tecla = para ver el resultado obtenido de nuestra operacion; boton AC que sirve para resetear la calculadora, boton C para borrar el ultimo digito, no se puede introducir expresiones erroneas como 1++2, 1+2+3, .2, 3.2.3 o 1..2.
+*teclado con numeros del 0-9; display para ver el resultado; operaciones basicas tales como sumas, restas, divisiones y multiplicaciones; una tecla = para ver el resultado obtenido de nuestra operacion; boton AC que sirve para resetear la calculadora, boton C para borrar el ultimo digito, no se puede introducir expresiones erroneas como 1++2, 1+2+3, .2, 3.2.3, 3+., 1..2.
 
 Mis mejoras incluidas son:
 
