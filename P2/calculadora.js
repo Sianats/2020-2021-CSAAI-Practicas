@@ -45,7 +45,7 @@ clear.onclick = () => {
 }
 
 function op(oper){
-  if (estado != ESTADO.OPERATION){
+  if (estado == ESTADO.OP1){
     display.innerHTML += oper;
     estado = ESTADO.OPERATION;
   }
