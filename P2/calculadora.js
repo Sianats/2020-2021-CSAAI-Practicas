@@ -14,21 +14,6 @@ const ESTADO = {
 
 let estado = ESTADO.INIT; 
 
-function digito(dig){
-  if (estado == ESTADO.INIT){
-    display.innerHTML += dig;
-    estado = ESTADO.OP1;
-  } else if (estado == ESTADO.OP1){
-    display.innerHTML += dig;
-    estado = ESTADO.OPERATION;
-  } else if (estado == ESTADO.OPERATION){
-    display.innerHTML += dig;
-    estado = ESTADO.OP2;
-  } else {
-    display.innerHTML += dig;
-  }
-}
-
 for (i=0; i<operacion.length; i++){
   operacion[i].onclick = (ev) => {
    op(ev.target.value);
@@ -37,7 +22,7 @@ for (i=0; i<operacion.length; i++){
 
 for (i=0; i<digitos.length; i++){
   digitos[i].onclick = (ev)=> {
-    digito(ev.target.value);
+    number(ev.target.value);
   }
 }
 
@@ -63,5 +48,17 @@ function op(oper){
   if (estado != ESTADO.OPERATION){
     display.innerHTML += oper;
     estado = ESTADO.OPERATION;
+  }
+}
+
+function number (num){
+  if(estado == ESTADO.INIT) {
+    display.innerHTML = num;
+    estado = ESTADO.OP1;
+  }else if (estado == ESTADO.OP1 || estado == ESTADO.OP2 || estado == ESTADO.OPERATION){
+    display.innerHTML += num;
+    if (estado == ESTADO.OPERATION) {
+        estado = ESTADO.OP2;
+    }
   }
 }
