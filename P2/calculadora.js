@@ -14,18 +14,18 @@ const ESTADO = {
 
 let estado = ESTADO.INIT; 
 
-function digito(ev){
+function digito(dig){
   if (estado == ESTADO.INIT){
-    display.innerHTML += ev.target.value;
+    display.innerHTML += dig;
     estado = ESTADO.OP1;
   } else if (estado == ESTADO.OP1){
-    display.innerHTML += ev.target.value;
+    display.innerHTML += dig;
     estado = ESTADO.OPERATION;
   } else if (estado == ESTADO.OPERATION){
-    display.innerHTML += ev.target.value;
+    display.innerHTML += dig;
     estado = ESTADO.OP2;
-  } else if (estado == ESTADO.OP2){
-    display.innerHTML += ev.target.value;
+  } else {
+    display.innerHTML += dig;
   }
 }
 
@@ -35,8 +35,10 @@ for (i=0; i<operacion.length; i++){
   }
 }
 
-for (let boton of digitos) {
-  boton.onclick = digito;
+for (i=0; i<digitos.length; i++){
+  digitos[i].onclick = (ev)=> {
+    digito(ev.target.value);
+  }
 }
 
 igual.onclick = () => {
