@@ -31,14 +31,7 @@ function digito(ev){
 
 for (i=0; i<operacion.length; i++){
   operacion[i].onclick = (ev) => {
-    if (display.innerHTML == "0") {
-      display.innerHTML = ev.target.value;
-    }else if (estado == ESTADO.OPERATION){
-      display.innerHTML = ev.target.value;
-      estado = ESTADO.OP2;
-    } else {
-      display.innerHTML += ev.target.value;
-    }
+   op(ev.target.value);
   }
 }
 
@@ -62,4 +55,11 @@ borrar.onclick = () => {
 clear.onclick = () => {
   display.innerHTML = "0";
   estado = ESTADO.INIT;
+}
+
+function op(oper){
+  if (estado != ESTADO.OPERATION){
+    display.innerHTML += oper;
+    estado = ESTADO.OPERATION;
+  }
 }
