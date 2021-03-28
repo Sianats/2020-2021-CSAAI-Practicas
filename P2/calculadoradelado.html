@@ -4,36 +4,51 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="calculadora.js" defer></script>
-      <link rel="stylesheet" href="calculadora.css">
+      <script src="calculadoradelado.js" defer></script>
+      <link rel="stylesheet" href="calculadoradelado.css">
       <title>Calculadora</title>
   </head>
   <body>
       <div class="calculadora">
-        <div class="partearriba">
-          <img src="captura 218.jpg" width="390px" alt="bateria">
-        </div>
         <div class="display"><p id="display">0</p></div>
         <div class="forma">
+
+
+          <button class="digito" type="button" id="cientifica" value="(">(</button>
+          <button class="digito" type="button" id="cientifica" value=")">)</button>
+          <button class="signo" type="button" id="signo">+/-</button>
           <button class="funcion" type="button" id="clear">AC</button>
           <button class="funcion" type="button" id="borrar">C</button>
           <button class="operador" type="button" id="porcentaje" value="*0.01">%</button>
           <button class="operador" type="button" id="operador" value="/">÷</button>
+          <button class="operador" type="button" id="cientifica" value="**2">x²</button>
+          <button class="operador" type="button" id="cientifica" value="**3">x³</button>
+          <button class="operador" type="button" id="cientifica" value="**">xⁿ</button>
           <button id="boton" type="button" value="7" class="digito">7</button>
           <button id="boton" type="button" value="8" class="digito">8</button>
           <button id="boton" type="button" value="9" class="digito">9</button>
           <button class="operador" type="button" id="operador" value="*">×</button>
+          <button class="operador" type="button" id="cientifica" value="e">10ⁿ</button>
+          <button class="signo" type="button" id="raiz">√</button>
+          <button class="signo" type="button" id="raizcubica">∛</button>
           <button id="boton" type="button" value="4" class="digito">4</button>
           <button id="boton" type="button" value="5" class="digito">5</button>
           <button id="boton" type="button" value="6" class="digito">6</button>
           <button class="operador" type="button" id="operador" value="-">-</button>
+          <button class="signo" type="button" id="sen">sen</button>
+          <button class="signo" type="button" id="cos">cos</button>
+          <button class="signo" type="button" id="tan">tan</button>
           <button id="boton" type="button" value="1" class="digito">1</button>
           <button id="boton" type="button" value="2" class="digito">2</button>
           <button id="boton" type="button" value="3" class="digito">3</button>
           <button class="operador" type="button" id="operador" value="+">+</button>
+          <button class="signo" type="button" id="log">log</button>
+          <button class="signo" type="button" id="ln">ln</button>
+          <button class="digito" type="button" id="cientifica" value="3.14159">π</button>
           <button id="numero0" type="button" value="0" class="digito">0</button>
           <button id="boton" type="button" value="." class= "digito">,</button>
           <button class="igual" type="button" id="igual">=</button>
+
         </div>
         <div class="salir"></div>
       </div>

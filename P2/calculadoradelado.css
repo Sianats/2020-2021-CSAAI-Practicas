@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 25px;
+}
+
+.calculadora {
+    background: black;
+    border-radius: 50px;
+    color: white;
+    height: 443px;
+    padding: 20px;
+    position: relative;
+    width: 760px;
+}
+
+.display {
+    font-size: 80px;
+    margin-top: -90px;
+    margin-bottom: -30px;
+    margin-right: 40px;
+    text-align: right;
+    height: 125px;
+}
+
+#boton {
+    align-items: center;
+    background: #333;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 30px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: white;
+}
+
+.signo{
+    align-items: center;
+    background: rgb(34, 34, 34);
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 30px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: white;
+}
+
+#cientifica{
+align-items: center;
+background: rgb(34, 34, 34);
+border-radius: 44%;
+border: 0;
+display: flex;
+font-size: 30px;
+height: 60px;
+width: 80px;
+justify-content: center;
+color: white;
+}
+
+.funcion {
+    align-items: center;
+    background: #a5a5a5;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 30px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: black;
+}
+
+#porcentaje{
+    align-items: center;
+    background: #a5a5a5;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 30px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: black;
+}
+
+#operador {
+    align-items: center;
+    background: #f1a33c;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 45px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: white;
+}
+
+.igual {
+    align-items: center;
+    background: #f1a33c;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 45px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: white;  
+}
+
+#numero0 {
+    align-items: center;
+    background: #333;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 35px;
+    height: 60px;
+    justify-content: center;
+    width: 80px;
+    border-radius: 50px;
+    grid-column: span 2;
+    justify-content: flex-start;
+    padding-left: 30px;
+    width: 185px;
+    color: white;
+}
+
+.forma {
+    margin-left: 15px;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(7, 100px);
+}
+
+.salir {
+    width: 240px;
+    height: 5px;
+    background: white;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 11px;
+    margin-left: 250px;
+}
+
+#boton:active,
+#numero0:active,
+#operador:active,
+.funcion:active,
+.igual:active,
+#cientifica:active,
+.signo:active,
+#porcentaje:active {
+    filter: brightness(140%);
+}
