@@ -7,6 +7,8 @@ Mis mejoras incluidas son:
 
 -No hace falta volver al estado init después de darle al igual para hacer la siguiente operación con el resultado obtenido.
 
+-Siempre esta el valor "0" mínimo escrito en el display, es decir, no puedes borrarlo con el boton C.
+
 -Función "por ciento" y uso de punto para poder usar los numeros decimales
 
 -Basado en el iphone, tiene la opción de darle la vuelta a la pantalla y eso te lleva a la versión "cientifica" de la calculadora que incluye: logaritmo en base 10, paréntesis, ln, coseno, seno, tangente, numero pi, raiz cubica y cuadrada, diez elevado a n, elevar al cuadrado, elevar al cubo, elevar a cualquier otro numero, cambio de signo. Para esta versión, al no ser obligatoria, he obviado la especificación de no poder poner 1+2+3, porque sino los paréntesis no tendrían sentido.
