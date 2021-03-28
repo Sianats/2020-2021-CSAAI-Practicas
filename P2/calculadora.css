@@ -136,9 +136,10 @@ body {
     margin-left: 125px;
 }
 
-.boton:active,
-.numero0:active,
-.operador:active,
-.funcion:active {
+#boton:active,
+#numero0:active,
+#operador:active,
+.funcion:active,
+#porcentaje:active {
     filter: brightness(120%);
 }
