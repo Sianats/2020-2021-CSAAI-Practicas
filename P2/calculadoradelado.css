@@ -39,6 +39,19 @@ body {
     color: white;
 }
 
+.coma{
+    align-items: center;
+    background: #333;
+    border-radius: 44%;
+    border: 0;
+    display: flex;
+    font-size: 30px;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    color: white;
+}
+
 .signo{
     align-items: center;
     background: rgb(34, 34, 34);
@@ -159,6 +172,7 @@ color: white;
 .igual:active,
 #cientifica:active,
 .signo:active,
+.coma:active,
 #porcentaje:active {
     filter: brightness(140%);
 }

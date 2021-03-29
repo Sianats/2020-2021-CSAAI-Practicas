@@ -44,6 +44,18 @@ body {
     color: white;
 }
 
+.coma{
+    align-items: center;
+    background: #333;
+    border-radius: 50%;
+    border: 0;
+    display: flex;
+    font-size: 40px;
+    height: 80px;
+    justify-content: center;
+    width: 80px;
+    color: white;
+}
 
 .funcion {
     align-items: center;
@@ -137,6 +149,7 @@ body {
 #operador:active,
 .funcion:active,
 .igual:active,
+.coma:active,
 #porcentaje:active {
     filter: brightness(120%);
 }

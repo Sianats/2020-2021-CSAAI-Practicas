@@ -4,12 +4,14 @@ clear = document.getElementById("clear")
 borrar = document.getElementById("borrar")
 operacion = document.getElementsByClassName ("operador")
 digitos = document.getElementsByClassName("digito")
+punto = document.getElementById("punto")
 
 const ESTADO = {
   INIT: 0,
   OP1: 1,
   OPERATION: 2,
   OP2: 3,
+  punto: false,
 }
 
 let estado = ESTADO.INIT; 
@@ -43,12 +45,14 @@ borrar.onclick = () => {
 clear.onclick = () => {
   display.innerHTML = "0";
   estado = ESTADO.INIT;
+  ESTADO.punto= false;
 }
 
 function op(oper){
   if (estado == ESTADO.OP1){
     display.innerHTML += oper;
     estado = ESTADO.OPERATION;
+    ESTADO.punto = true;
   }
 }
 
@@ -60,6 +64,18 @@ function number (num){
     display.innerHTML += num;
     if (estado == ESTADO.OPERATION) {
         estado = ESTADO.OP2;
+        ESTADO.punto = false;
     }
+  }
+}
+
+punto.onclick = (ev) => {
+  if(ESTADO.punto){
+    console.log("Error introduciendo punto");
+  }else if(estado == ESTADO.INIT){
+    ESTADO.punto = null;
+  } else{
+    display.innerHTML += ev.target.value;
+    ESTADO.punto = true;
   }
 }
