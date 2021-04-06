@@ -1,0 +1,14 @@
+canvas {
+    background-color: rgb(0, 255, 170);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+  }
+  
+  /* Imagen deshabilitada
+     Se usa para leerla desde js y
+     meterla en el canvas */
+     #logo-urjc {
+      display: none;
+    }
