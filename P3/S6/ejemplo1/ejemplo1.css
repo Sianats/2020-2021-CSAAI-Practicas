@@ -1,0 +1,13 @@
+/* Estilo del canvas
+Le ponemos un borde negro y el color de fondo de otro tipo.
+Aquí se supone que te introducen la función radio-borde pero yo ya
+la he usado en varios programas.
+*/
+
+canvas {
+    background-color: rgb(0, 255, 170);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+  }
