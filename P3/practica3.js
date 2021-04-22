@@ -1,8 +1,8 @@
 console.log("Ejecutando JS...");
 
 reset = document.getElementById("reset")
-start = document.getElementById("start")
 const canvas = document.getElementById("canvas");
+const radio = 8;
 
 //-- Definir el tamaño del canvas
 canvas.width = 250;
@@ -22,18 +22,17 @@ let vely = 1;
 //-- Funcion principal de animacion
 function update() 
 {
-  console.log("test");
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
 
    //-- Condicion de rebote en extremos verticales del canvas
-   if (x < 0 || x >= (canvas.width - 20) ) {
+   if (x < 0 || x >= (canvas.width - radio) ) {
     velx = -velx;
   }
 
   //-- Condición de rebote en extremos horizontales del canvas
-  if (y <= 0 || y > canvas.height - 20) {
+  if (y <= radio || y > canvas.height - radio) {
     vely = -vely;
   }
 
@@ -46,10 +45,11 @@ function update()
 
   //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
-    ctx.rect(x, y, 20, 20);
 
     //-- Dibujar
+    ctx.arc( x, y, radio, 0, Math.PI * 2 );
     ctx.fillStyle = 'white';
+
 
     //-- Rellenar
     ctx.fill();
