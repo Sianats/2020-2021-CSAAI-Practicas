@@ -2,7 +2,7 @@ console.log("Ejecutando JS...");
 
 reset = document.getElementById("reset")
 const canvas = document.getElementById("canvas");
-const radio = 8;
+const radio = 7;
 
 //-- Definir el tamaño del canvas
 canvas.width = 250;
@@ -12,8 +12,8 @@ canvas.height = 400;
 const ctx = canvas.getContext("2d");
 
 //-- Coordenadas del objeto
-let x = 0;
-let y = 10;
+let x = 10;
+let y =10;
 
 //-- Velocidades del objeto
 let velx = 1;
@@ -27,7 +27,7 @@ function update()
   //-- (física del movimiento rectilineo uniforme)
 
    //-- Condicion de rebote en extremos verticales del canvas
-   if (x < 0 || x >= (canvas.width - radio) ) {
+   if (x < 7 || x >= canvas.width - radio) {
     velx = -velx;
   }
 
