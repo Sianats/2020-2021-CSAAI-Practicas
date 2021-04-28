@@ -6,6 +6,7 @@ canvas {
     border-top-color: white;
     border-top-width: 17px;
     background-color: black;
+    border-bottom-width: 7px;
     border-style: solid;
 
   }
