@@ -9,10 +9,10 @@ let raqueta;
 const anchoraqueta= 10;
 const largoraqueta= 75;
 const origen_x= 0;
-const origen_y= 40;
+const origen_y= 45;
 const LADRILLO = {
   F: 8,  // Filas
-  C: 14,  // Columnas
+  C: 9,  // Columnas
   w: 35,
   h: 10,
   padding: 5,
@@ -24,18 +24,6 @@ raqueta= (canvas.width - largoraqueta) / 2;
 var derecha;
 var izquierda;
 
-
-window.onkeydown = (ev)=>{
-  switch (ev.keyCode) {
-      case 39:
-        raq = -derecha;
-        break;
-      
-      case 37:
-        izquierda = -izquierda;
-        break;
-
-  }}
 
 //function moverConRaton(e) {
 //    var localiz = e.clientX - canvas.offsetLeft;
@@ -62,12 +50,10 @@ const ctx = canvas.getContext("2d");
 //-- Coordenadas del objeto
 let x = 10;
 let y =10;
-let raq = 10;
 
 //-- Velocidades del objeto
 let velx = 1;
 let vely = 1;
-let velraq = 0;
 
 
 //document.addEventListener( "mousemove", moverConRaton, false );
@@ -75,8 +61,8 @@ canvas.addEventListener( 'click', update, false );
 //-- Funcion principal de animacion
 function update() 
 {
-  vidas: 3;
-  puntuacion: 0;
+  vidas= 3;
+  puntuacion= 0;
   //-- Algoritmo de animacion:
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
@@ -94,7 +80,6 @@ function update()
   //-- Actualizar la posición
   x = x + velx;
   y = y + vely;
-  raq = raq + velraq;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -122,8 +107,6 @@ for (let i = 0; i < LADRILLO.F; i++) {
         };
     }
 }
-
-ladrillos[0][1].visible = false;
 
 
 //-- Dibujar ladrillos
@@ -158,16 +141,16 @@ for (let i = 0; i < LADRILLO.F; i++) {
 
 function drawScore() {
   ctx.textAlign = "left";
-  ctx.font = "16px CharriotDeluxe";
+  ctx.font = "40px CharriotDeluxe";
   ctx.fillStyle = "white";
-  ctx.fillText(puntuacion, 8, 20);
+  ctx.fillText("00" + puntuacion, 8, 30);
 }
 
 function drawLives() {
   ctx.textAlign = "left";
-  ctx.font = "16px CharriotDeluxe";
+  ctx.font = "40px CharriotDeluxe";
   ctx.fillStyle = "white";
-  ctx.fillText( vidas, canvas.width - 85, 20 );
+  ctx.fillText( "00" + vidas, canvas.width - 70, 30 );
 }
 //-- ¡Que empiece la función!
 update();
