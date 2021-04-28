@@ -8,32 +8,42 @@ let vidas;
 let raqueta;
 const anchoraqueta= 10;
 const largoraqueta= 75;
+const origen_x= 0;
+const origen_y= 40;
+const LADRILLO = {
+  F: 8,  // Filas
+  C: 14,  // Columnas
+  w: 35,
+  h: 10,
+  padding: 5,
+  visible: true
+};
 
-raqueta= (canvas.widht - largoraqueta) / 2;
-derecha = false;
-izquierda = false;
 
-function abajo( e ) {
-    if ( e.key == "Right" || e.key == "ArrowRight" ) {
-        derecha = true;
-    } else if ( e.key == "Left" || e.key == "ArrowLeft" ) {
-        izquierda = true;
-    }
-    }
+raqueta= (canvas.width - largoraqueta) / 2;
+var derecha;
+var izquierda;
 
-    function arriba( e ) {
-    if ( e.key == "Right" || e.key == "ArrowRight" ) {
-        derecha = false;
-    } else if ( e.key == "Left" || e.key == "ArrowLeft" ) {
-        izquierda = false;
-    }
-    }
-function moverConRaton(e) {
-    var localiz = e.clientX - canvas.offsetLeft;
-    if ( localiz > 0 && localiz < canvas.width ) {
-        raqueta = localiz - largoraqueta / 2;
-    }
-}
+
+window.onkeydown = (ev)=>{
+  switch (ev.keyCode) {
+      case 39:
+        raq = -derecha;
+        break;
+      
+      case 37:
+        izquierda = -izquierda;
+        break;
+
+  }}
+
+//function moverConRaton(e) {
+//    var localiz = e.clientX - canvas.offsetLeft;
+//   if ( localiz > 0 && localiz < canvas.width ) {
+//       raqueta = localiz - largoraqueta / 2;
+//   }
+//}
+
 
 function drawRaqueta() {
     ctx.beginPath();
@@ -52,11 +62,16 @@ const ctx = canvas.getContext("2d");
 //-- Coordenadas del objeto
 let x = 10;
 let y =10;
+let raq = 10;
 
 //-- Velocidades del objeto
 let velx = 1;
 let vely = 1;
+let velraq = 0;
 
+
+//document.addEventListener( "mousemove", moverConRaton, false );
+canvas.addEventListener( 'click', update, false );
 //-- Funcion principal de animacion
 function update() 
 {
@@ -79,6 +94,7 @@ function update()
   //-- Actualizar la posición
   x = x + velx;
   y = y + vely;
+  raq = raq + velraq;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -90,7 +106,40 @@ function update()
   ctx.arc( x, y, radio, 0, Math.PI * 2 );
   ctx.fillStyle = 'white';
 
+//-- Estructura de los ladrillos
+const ladrillos = [];
 
+for (let i = 0; i < LADRILLO.F; i++) {
+    ladrillos[i] = [];
+    for (let j = 0; j < LADRILLO.C; j++) {
+      ladrillos[i][j] = {
+          x: ((LADRILLO.w + LADRILLO.padding) * j) + origen_x,
+          y: ((LADRILLO.h + LADRILLO.padding) * i) + origen_y,
+          w: LADRILLO.w,
+          h: LADRILLO.h,
+          padding: LADRILLO.padding,
+          visible: LADRILLO.visible
+        };
+    }
+}
+
+ladrillos[0][1].visible = false;
+
+
+//-- Dibujar ladrillos
+for (let i = 0; i < LADRILLO.F; i++) {
+    for (let j = 0; j < LADRILLO.C; j++) {
+
+      //-- Si el ladrillo es visible se pinta
+      if (ladrillos[i][j].visible) {
+        ctx.beginPath();
+        ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+}
   //-- Rellenar
   ctx.fill();
 
@@ -104,6 +153,7 @@ function update()
   drawScore();
   drawLives();
   drawRaqueta();
+
 }
 
 function drawScore() {
