@@ -1,6 +1,7 @@
-const canvas = document.getElementById( "myCanvas" );
+const canvas = document.getElementById( "canvas" );
+canvas.width = 350;
+canvas.height = 500;
 const ctx = canvas.getContext( "2d" );
-const LADRILLO;
 const columnas = 5;
 const filas = 3;
 const ancholadrillo = 75;
@@ -8,14 +9,14 @@ const alturaladrillo = 20;
 const Paddingladrillo = 10;
 const bricktop = 30;
 const brickleft = 30;
-const RAQUETA;
-const anchoraqueta= 10;
-const largoraqueta= 7;
+const anchoraqueta = 75;
+const altoraqueta = 10;
 const radio = 7;
-const origen_x= 0;
-const origen_y= 45;
+const origen_x = 0;
+const origen_y = 45;
 
 // Declarar ciertas cosas
+let LADRILLO;
 let puntuacion;
 let vidas;
 let raqueta;
@@ -41,7 +42,7 @@ function update() {
     }
 
     // valores iniciales
-    RAQUETA = ( canvas.width - paddleWidth ) / 2;
+    raqueta = ( canvas.width - anchoraqueta ) / 2;
     x = canvas.width / 2;
     y = canvas.height - 30;
     jugar = true;
@@ -49,6 +50,30 @@ function update() {
     vidas = 3;
 
 
-    // Start animation
+    // Funcion que voy a crear para que dibuje las cosas
     draw();
-    }
+}
+
+function drawbola() {
+    ctx.beginPath();
+    ctx.arc( x, y, radio, 0, Math.PI * 2 );
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function drawraqueta() {
+    ctx.beginPath();
+    ctx.rect( raqueta, canvas.height - altoraqueta, anchoraqueta, altoraqueta);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw(){
+    drawbola();
+    drawraqueta();
+    requestAnimationFrame(draw);
+}
+
+update();
