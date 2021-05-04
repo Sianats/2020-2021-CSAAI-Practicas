@@ -70,9 +70,25 @@ function drawraqueta() {
     ctx.closePath();
 }
 
+function drawpuntuacion() {
+    ctx.textAlign = "left";
+    ctx.font = "40px CharriotDeluxe";
+    ctx.fillStyle = "white";
+    ctx.fillText("00" + puntuacion, 10, 35 );
+}
+
+function drawvidas() {
+    ctx.textAlign = "left";
+    ctx.font = "40px CharriotDeluxe";
+    ctx.fillStyle = "white";
+    ctx.fillText("00" + vidas, canvas.width - 75, 35 );
+}
+
 function draw(){
     drawbola();
     drawraqueta();
+    drawvidas();
+    drawpuntuacion();
     requestAnimationFrame(draw);
 }
 
