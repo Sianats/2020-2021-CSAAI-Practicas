@@ -2,18 +2,16 @@ const canvas = document.getElementById( "canvas" );
 canvas.width = 350;
 canvas.height = 500;
 const ctx = canvas.getContext( "2d" );
-const columnas = 5;
-const filas = 3;
-const ancholadrillo = 75;
-const alturaladrillo = 20;
-const Paddingladrillo = 10;
-const bricktop = 30;
-const brickleft = 30;
+const columnas = 9;
+const filas = 8;
+const ancholadrillo = 35;
+const alturaladrillo = 10;
+const Paddingladrillo = 5;
+const bricktop = 45;
+const brickleft = 0;
 const anchoraqueta = 75;
 const altoraqueta = 10;
 const radio = 7;
-const origen_x = 0;
-const origen_y = 45;
 
 // Declarar ciertas cosas
 let LADRILLO;
@@ -74,21 +72,41 @@ function drawpuntuacion() {
     ctx.textAlign = "left";
     ctx.font = "40px CharriotDeluxe";
     ctx.fillStyle = "white";
-    ctx.fillText("00" + puntuacion, 10, 35 );
+    ctx.fillText( "00" + puntuacion, 10, 35 );
 }
 
 function drawvidas() {
     ctx.textAlign = "left";
     ctx.font = "40px CharriotDeluxe";
     ctx.fillStyle = "white";
-    ctx.fillText("00" + vidas, canvas.width - 75, 35 );
+    ctx.fillText( "00" + vidas, canvas.width - 75, 35 );
+}
+
+function drawladrillos() {
+    for ( var i = 0; i < filas; i++ ) {
+        for ( var j = 0; j < columnas; j++ ) {
+        if ( LADRILLO[i][j].status == 1 ) {
+            var x = ( j * ( ancholadrillo + Paddingladrillo ) ) + brickleft;
+            var y = ( i * ( alturaladrillo + Paddingladrillo ) ) + bricktop;
+            LADRILLO[i][j].x = x;
+            LADRILLO[i][j].y = y;
+            ctx.beginPath();
+            ctx.rect( x, y, ancholadrillo, alturaladrillo );
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.closePath();
+        }
+        }
+    }
 }
 
 function draw(){
+    ctx.clearRect( 0, 0, canvas.width, canvas.height );
     drawbola();
     drawraqueta();
     drawvidas();
     drawpuntuacion();
+    drawladrillos();
     requestAnimationFrame(draw);
 }
 
