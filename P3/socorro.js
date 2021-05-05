@@ -60,12 +60,17 @@ document.onkeydown = (e)=> {
     switch (e.keyCode) {
         case 37:
             izquierda = true;
-            raqueta -= 7;
+
+            if ( raqueta > 0 ){
+                raqueta -= 7;
+            }
             break;
 
         case 39:
             derecha = true;
+            if ( raqueta < canvas.width - anchoraqueta ){
             raqueta += 7;
+            }
             break;
 
         case 32:
