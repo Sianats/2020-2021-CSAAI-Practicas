@@ -35,7 +35,10 @@ let y;
 let velx = 3;
 let vely = 3;
 
+canvas.addEventListener( 'click', restart, false );
+
 function update() {
+    canvas.removeEventListener( 'click', restart, false );
 
     // array para los ladrillos
     LADRILLO = [];
@@ -55,7 +58,6 @@ function update() {
     vidas = 3;
     izquierda = false;
     derecha = false;
-
 
     // Funcion que voy a crear para que dibuje las cosas
     draw();
@@ -84,7 +86,6 @@ document.onkeydown = (e)=> {
     }
 }
 
-
 function drawbola() {
     ctx.beginPath();
     ctx.arc( x, y, radio, 0, Math.PI * 2 );
@@ -93,6 +94,26 @@ function drawbola() {
     ctx.closePath();
 }
 
+function quitarladrillos() {
+    for ( var i = 0; i < filas; i++ ) {
+        for ( var j = 0; j < columnas; j++ ) {
+        var b = LADRILLO[i][j];
+        if ( b.status == 1 ) {
+            if ( x > b.x && x < b.x + ancholadrillo && y > b.y && y < b.y + alturaladrillo ) {
+            vely = -vely;
+            b.status = 0;
+            puntuacion++;
+            if ( puntuacion == columnas * filas ) {
+                jugar = false;
+                ctx.textAlign = "center";
+                ctx.fillText( 'You won!', canvas.width - 275, 250 );
+                canvas.addEventListener( 'click', restart, false );
+            }
+            }
+        }
+        }
+    }
+    }
 function drawraqueta() {
     ctx.beginPath();
     ctx.rect( raqueta, canvas.height - altoraqueta, anchoraqueta, altoraqueta);
@@ -102,7 +123,6 @@ function drawraqueta() {
 }
 
 function drawpuntuacion() {
-
     ctx.fillText( "00" + puntuacion, 10, 35 );
 }
 
@@ -135,6 +155,7 @@ function draw(){
     drawvidas();
     drawpuntuacion();
     drawladrillos();
+    quitarladrillos();
 
 
     if (jugar){
@@ -142,20 +163,41 @@ function draw(){
         velx = -velx;
     }
 
-    if ( y + vely < radio ) {
+    if ( y + vely < 40 ) {
         vely = -vely;
     } else if ( y + vely > canvas.height - radio ) {
-        if ( x> raqueta && x < raqueta + anchoraqueta ) {
+        if ( x> raqueta - radio && x < raqueta + anchoraqueta ) {
         vely = -vely;
-        }
-    }
+        } else {
+            vidas--;
+            if ( !vidas ) {
+                vidas = 0;
+                velx = 0;
+                vely = 0;
+                jugar = false;
+            } else {
+                x = canvas.width / 2;
+                y = canvas.height - 30;
+                velx = 3;
+                vely = -3;
+            }
+        } 
+    } 
 
     x += velx;
     y += vely;
 
+} else if ( !vidas ) {
+    ctx.textAlign = "left";
+    ctx.fillStyle = 'white';
+    ctx.fillText( 'Game Over', canvas.width - 275, 250 );
+    canvas.addEventListener( 'click', restart, false);
+}
+    requestAnimationFrame(draw);
 }
 
-    requestAnimationFrame(draw);
+function restart () {
+    document.location.reload();
 }
 
 update();

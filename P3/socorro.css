@@ -15,7 +15,7 @@ canvas {
 body{
   text-align: center;
   border-top-width: 30px;
-  background-color: red;
+  background-color: gray;
 }
 
 @font-face{
