@@ -13,6 +13,11 @@ const anchoraqueta = 75;
 const altoraqueta = 10;
 const radio = 7;
 
+// Estilo de la letra
+ctx.font = "40px CharriotDeluxe";
+ctx.fillStyle = "white";
+ctx.textAlign = "left";
+
 // Declarar ciertas cosas
 let LADRILLO;
 let puntuacion;
@@ -79,6 +84,7 @@ document.onkeydown = (e)=> {
     }
 }
 
+
 function drawbola() {
     ctx.beginPath();
     ctx.arc( x, y, radio, 0, Math.PI * 2 );
@@ -96,16 +102,11 @@ function drawraqueta() {
 }
 
 function drawpuntuacion() {
-    ctx.textAlign = "left";
-    ctx.font = "40px CharriotDeluxe";
-    ctx.fillStyle = "white";
+
     ctx.fillText( "00" + puntuacion, 10, 35 );
 }
 
 function drawvidas() {
-    ctx.textAlign = "left";
-    ctx.font = "40px CharriotDeluxe";
-    ctx.fillStyle = "white";
     ctx.fillText( "00" + vidas, canvas.width - 75, 35 );
 }
 
@@ -135,6 +136,8 @@ function draw(){
     drawpuntuacion();
     drawladrillos();
 
+
+    if (jugar){
     if ( x + velx > canvas.width - radio || x + velx < radio ) {
         velx = -velx;
     }
@@ -149,7 +152,10 @@ function draw(){
 
     x += velx;
     y += vely;
-   requestAnimationFrame(draw);
+
+}
+
+    requestAnimationFrame(draw);
 }
 
 update();

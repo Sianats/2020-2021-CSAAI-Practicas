@@ -1,17 +1,20 @@
 canvas {
-    border-left-color: white;
-    border-left-width: 7px;
-    border-right-color: white;
-    border-right-width: 7px;
-    border-top-color: white;
-    border-top-width: 17px;
-    background-color: black;
-    border-bottom-width: 7px;
-    border-style: solid;
-
+  border-left-color: white;
+  border-left-width: 7px;
+  border-right-color: white;
+  border-right-width: 7px;
+  border-top-color: white;
+  border-top-width: 17px;
+  background-color: black;
+  border-bottom-width: 7px;
+  border-style: solid;
+  font: "CharriotDeluxe" white;
+  font-size: 40px;
 }
 
 body{
+  text-align: center;
+  border-top-width: 30px;
   background-color: red;
 }
 
