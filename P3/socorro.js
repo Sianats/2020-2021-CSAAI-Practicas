@@ -18,7 +18,7 @@ let LADRILLO;
 let puntuacion;
 let vidas;
 let raqueta;
-let jugar = true;
+let jugar;
 let izquierda;
 let derecha;
 
@@ -45,7 +45,7 @@ function update() {
     raqueta = ( canvas.width - anchoraqueta ) / 2;
     x = canvas.width / 2;
     y = canvas.height - 30;
-    jugar = true;
+    jugar = false;
     puntuacion = 0;
     vidas = 3;
     izquierda = false;
@@ -69,14 +69,16 @@ document.onkeydown = (e)=> {
         case 39:
             derecha = true;
             if ( raqueta < canvas.width - anchoraqueta ){
-            raqueta += 7;
+                raqueta += 7;
             }
             break;
 
         case 32:
+            jugar = true;
             break;
     }
-  }
+}
+
 function drawbola() {
     ctx.beginPath();
     ctx.arc( x, y, radio, 0, Math.PI * 2 );
@@ -132,7 +134,22 @@ function draw(){
     drawvidas();
     drawpuntuacion();
     drawladrillos();
-    requestAnimationFrame(draw);
+
+    if ( x + velx > canvas.width - radio || x + velx < radio ) {
+        velx = -velx;
+    }
+
+    if ( y + vely < radio ) {
+        vely = -vely;
+    } else if ( y + vely > canvas.height - radio ) {
+        if ( x> raqueta && x < raqueta + anchoraqueta ) {
+        vely = -vely;
+        }
+    }
+
+    x += velx;
+    y += vely;
+   requestAnimationFrame(draw);
 }
 
 update();
