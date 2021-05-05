@@ -19,6 +19,8 @@ let puntuacion;
 let vidas;
 let raqueta;
 let jugar = true;
+let izquierda;
+let derecha;
 
 // Coordenadas iniciales de la bola
 let x;
@@ -46,12 +48,30 @@ function update() {
     jugar = true;
     puntuacion = 0;
     vidas = 3;
+    izquierda = false;
+    derecha = false;
 
 
     // Funcion que voy a crear para que dibuje las cosas
     draw();
 }
 
+document.onkeydown = (e)=> {
+    switch (e.keyCode) {
+        case 37:
+            izquierda = true;
+            raqueta -= 7;
+            break;
+
+        case 39:
+            derecha = true;
+            raqueta += 7;
+            break;
+
+        case 32:
+            break;
+    }
+  }
 function drawbola() {
     ctx.beginPath();
     ctx.arc( x, y, radio, 0, Math.PI * 2 );
