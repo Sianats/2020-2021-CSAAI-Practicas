@@ -1,20 +1,23 @@
 const canvas = document.getElementById( "canvas" );
-canvas.width = 350;
-canvas.height = 500;
+canvas.width = 550;
+canvas.height = 700;
 const ctx = canvas.getContext( "2d" );
-const columnas = 9;
+facil = document.getElementById("facil")
+medio = document.getElementById("medio")
+dificil = document.getElementById("dificil")
+const columnas = 14;
 const filas = 8;
 const ancholadrillo = 35;
 const alturaladrillo = 10;
 const Paddingladrillo = 5;
-const bricktop = 45;
+const bricktop = 50;
 const brickleft = 0;
-const anchoraqueta = 75;
+const anchoraqueta = 95;
 const altoraqueta = 10;
-const radio = 7;
+const radio = 10;
 
 // Estilo de la letra
-ctx.font = "40px CharriotDeluxe";
+ctx.font = "50px CharriotDeluxe";
 ctx.fillStyle = "white";
 ctx.textAlign = "left";
 
@@ -32,8 +35,8 @@ let x;
 let y;
 
 // Velocidades de la bola
-let velx = 3;
-let vely = 3;
+var velx;
+var vely;
 
 canvas.addEventListener( 'click', restart, false );
 
@@ -61,6 +64,33 @@ function update() {
 
     // Funcion que voy a crear para que dibuje las cosas
     draw();
+}
+
+facil.onclick = () =>{
+    velx = 3;
+    vely = -3;
+    facil.onclick = false;
+    medio.onclick = false;
+    dificil.onclick = false;
+
+}
+
+medio.onclick = () =>{
+    velx = 5;
+    vely = -5;
+    facil.onclick = false;
+    medio.onclick = false;
+    dificil.onclick = false;
+
+}
+
+dificil.onclick = () =>{
+    velx = 7;
+    vely = -7;
+    facil.onclick = false;
+    medio.onclick = false;
+    dificil.onclick = false;
+
 }
 
 document.onkeydown = (e)=> {
@@ -94,7 +124,7 @@ function drawbola() {
     ctx.closePath();
 }
 
-function quitarladrillos() {
+function romperladrillos() {
     for ( var i = 0; i < filas; i++ ) {
         for ( var j = 0; j < columnas; j++ ) {
         var b = LADRILLO[i][j];
@@ -105,8 +135,7 @@ function quitarladrillos() {
                     puntuacion++;
                     if ( puntuacion == columnas * filas ) {
                         jugar = false;
-                        ctx.textAlign = "center";
-                        ctx.fillText( 'You won!', canvas.width - 275, 250 );
+                        ctx.fillText( 'You won!', 150, 350 );
                         canvas.addEventListener( 'click', restart, false );
                     }
                 }
@@ -124,11 +153,11 @@ function drawraqueta() {
 }
 
 function drawpuntuacion() {
-    ctx.fillText( "00" + puntuacion, 10, 35 );
+    ctx.fillText( "00" + puntuacion, 10, 40 );
 }
 
 function drawvidas() {
-    ctx.fillText( "00" + vidas, canvas.width - 75, 35 );
+    ctx.fillText( "00" + vidas, canvas.width - 90, 40 );
 }
 
 function drawladrillos() {
@@ -142,6 +171,15 @@ function drawladrillos() {
                 ctx.beginPath();
                 ctx.rect( x1, y1, ancholadrillo, alturaladrillo );
                 ctx.fillStyle = "white";
+                if (i == 0 || i == 1){
+                    ctx.fillStyle = "red";
+                } else if (i == 2 || i == 3){
+                    ctx.fillStyle = "orange";
+                } else if (i == 4 || i == 5){
+                    ctx.fillStyle = "green";
+                } else if (i == 6 || i == 7){
+                    ctx.fillStyle = "yellow";
+                }
                 ctx.fill();
                 ctx.closePath();
             }
@@ -156,7 +194,7 @@ function draw(){
     drawvidas();
     drawpuntuacion();
     drawladrillos();
-    quitarladrillos();
+    romperladrillos();
 
 
     if (jugar){
@@ -179,8 +217,8 @@ function draw(){
                 } else {
                     x = canvas.width / 2;
                     y = canvas.height - 100;
-                    velx = 3;
-                    vely = -3;
+                    velx = velx;
+                    vely = -vely;
                 }
             } 
         } 
@@ -189,9 +227,8 @@ function draw(){
         y += vely;
 
     } else if ( !vidas ) {
-        ctx.textAlign = "left";
         ctx.fillStyle = 'white';
-        ctx.fillText( 'Game Over', canvas.width - 275, 250 );
+        ctx.fillText( 'Game Over', 150, 350 );
         canvas.addEventListener( 'click', restart, false);
     }
 
