@@ -11,22 +11,6 @@ canvas {
   font-size: 40px;
 }
 
-.ladrillo1{
-  color: orange;
-}
-
-.ladrillo2{
-  color: green;
-}
-
-.ladrillo3{
-  color: red;
-}
-
-.ladrillo4{
-  color: yellow;
-}
-
 body{
   text-align: center;
   border-top-width: 30px;
