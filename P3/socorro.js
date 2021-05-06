@@ -31,7 +31,7 @@ let derecha;
 let x;
 let y;
 
-// Velocidades y radio de la bola
+// Velocidades de la bola
 let velx = 3;
 let vely = 3;
 
@@ -45,7 +45,7 @@ function update() {
     for ( var i = 0; i < filas; i++ ) {
         LADRILLO[i] = [];
         for ( var j = 0; j < columnas; j++ ) {
-        LADRILLO[i][j] = {x: 0, y: 0, status: 1};
+        LADRILLO[i][j] = {x: 0, y: 0, visible: 1};
         }
     }
 
@@ -71,18 +71,18 @@ document.onkeydown = (e)=> {
             if ( raqueta > 0 ){
                 raqueta -= 7;
             }
-            break;
+        break;
 
         case 39:
             derecha = true;
             if ( raqueta < canvas.width - anchoraqueta ){
                 raqueta += 7;
             }
-            break;
+        break;
 
         case 32:
             jugar = true;
-            break;
+        break;
     }
 }
 
@@ -98,25 +98,26 @@ function quitarladrillos() {
     for ( var i = 0; i < filas; i++ ) {
         for ( var j = 0; j < columnas; j++ ) {
         var b = LADRILLO[i][j];
-        if ( b.status == 1 ) {
-            if ( x > b.x && x < b.x + ancholadrillo && y > b.y && y < b.y + alturaladrillo ) {
-            vely = -vely;
-            b.status = 0;
-            puntuacion++;
-            if ( puntuacion == columnas * filas ) {
-                jugar = false;
-                ctx.textAlign = "center";
-                ctx.fillText( 'You won!', canvas.width - 275, 250 );
-                canvas.addEventListener( 'click', restart, false );
-            }
+            if ( b.visible == 1 ) {
+                if ( x > b.x && x < b.x + ancholadrillo && y > b.y && y < b.y + alturaladrillo ) {
+                    vely = -vely;
+                    b.visible = 0;
+                    puntuacion++;
+                    if ( puntuacion == columnas * filas ) {
+                        jugar = false;
+                        ctx.textAlign = "center";
+                        ctx.fillText( 'You won!', canvas.width - 275, 250 );
+                        canvas.addEventListener( 'click', restart, false );
+                    }
+                }
             }
         }
-        }
     }
-    }
+}
+
 function drawraqueta() {
     ctx.beginPath();
-    ctx.rect( raqueta, canvas.height - altoraqueta, anchoraqueta, altoraqueta);
+    ctx.rect( raqueta, canvas.height - altoraqueta, anchoraqueta, altoraqueta );
     ctx.fillStyle = "white";
     ctx.fill();
     ctx.closePath();
@@ -133,17 +134,17 @@ function drawvidas() {
 function drawladrillos() {
     for ( var i = 0; i < filas; i++ ) {
         for ( var j = 0; j < columnas; j++ ) {
-        if ( LADRILLO[i][j].status == 1 ) {
-            var x = ( j * ( ancholadrillo + Paddingladrillo ) ) + brickleft;
-            var y = ( i * ( alturaladrillo + Paddingladrillo ) ) + bricktop;
-            LADRILLO[i][j].x = x;
-            LADRILLO[i][j].y = y;
-            ctx.beginPath();
-            ctx.rect( x, y, ancholadrillo, alturaladrillo );
-            ctx.fillStyle = "white";
-            ctx.fill();
-            ctx.closePath();
-        }
+            if ( LADRILLO[i][j].visible == 1 ) {
+                var x1 = ( j * ( ancholadrillo + Paddingladrillo ) ) + brickleft;
+                var y1 = ( i * ( alturaladrillo + Paddingladrillo ) ) + bricktop;
+                LADRILLO[i][j].x = x1;
+                LADRILLO[i][j].y = y1;
+                ctx.beginPath();
+                ctx.rect( x1, y1, ancholadrillo, alturaladrillo );
+                ctx.fillStyle = "white";
+                ctx.fill();
+                ctx.closePath();
+            }
         }
     }
 }
@@ -159,40 +160,41 @@ function draw(){
 
 
     if (jugar){
-    if ( x + velx > canvas.width - radio || x + velx < radio ) {
-        velx = -velx;
+        if ( x + velx > canvas.width - radio || x + velx < radio ) {
+            velx = -velx;
+        }
+
+        if ( y + vely < 40 ) {
+            vely = -vely;
+        } else if ( y + vely > canvas.height - (radio + altoraqueta) ) {
+            if ( x > raqueta && x < raqueta + anchoraqueta ) {
+            vely = -vely;
+            } else {
+                vidas--;
+                if ( !vidas ) {
+                    vidas = 0;
+                    velx = 0;
+                    vely = 0;
+                    jugar = false;
+                } else {
+                    x = canvas.width / 2;
+                    y = canvas.height - 100;
+                    velx = 3;
+                    vely = -3;
+                }
+            } 
+        } 
+
+        x += velx;
+        y += vely;
+
+    } else if ( !vidas ) {
+        ctx.textAlign = "left";
+        ctx.fillStyle = 'white';
+        ctx.fillText( 'Game Over', canvas.width - 275, 250 );
+        canvas.addEventListener( 'click', restart, false);
     }
 
-    if ( y + vely < 40 ) {
-        vely = -vely;
-    } else if ( y + vely > canvas.height - radio ) {
-        if ( x> raqueta - radio && x < raqueta + anchoraqueta ) {
-        vely = -vely;
-        } else {
-            vidas--;
-            if ( !vidas ) {
-                vidas = 0;
-                velx = 0;
-                vely = 0;
-                jugar = false;
-            } else {
-                x = canvas.width / 2;
-                y = canvas.height - 30;
-                velx = 3;
-                vely = -3;
-            }
-        } 
-    } 
-
-    x += velx;
-    y += vely;
-
-} else if ( !vidas ) {
-    ctx.textAlign = "left";
-    ctx.fillStyle = 'white';
-    ctx.fillText( 'Game Over', canvas.width - 275, 250 );
-    canvas.addEventListener( 'click', restart, false);
-}
     requestAnimationFrame(draw);
 }
 
