@@ -138,7 +138,15 @@ function romperladrillos() {
                     golpeladrillo.play();
                     vely = -vely;
                     b.visible = 0;
-                    puntuacion++;
+                    if (i == 0 || i == 1){
+                        puntuacion += 7;
+                    } else if (i == 2 || i == 3){
+                        puntuacion += 5;
+                    } else if (i == 4 || i == 5){
+                        puntuacion += 3;
+                    } else if (i == 6 || i == 7){
+                        puntuacion += 1;
+                    }
                     if ( puntuacion == columnas * filas ) {
                         jugar = false;
                         ctx.fillText( 'You won!', 150, 350 );
@@ -163,6 +171,7 @@ function drawpuntuacion() {
     ctx.fillText( "00" + puntuacion, 10, 40 );
 
 }
+
 // Points are 1 point for yellow, 3 for the green, 7 for red, orange 5. To make the game more challenging,
 //  the speed of the game increases after 4 hits and again at 12 hits and to the highest speeds in
 //   orange and red rows. The hammer decreases by half the size when the red row is broken through. 
