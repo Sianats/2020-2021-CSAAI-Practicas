@@ -1,6 +1,6 @@
 const canvas = document.getElementById( "canvas" );
 canvas.width = 550;
-canvas.height = 700;
+canvas.height = 600;
 const ctx = canvas.getContext( "2d" );
 facil = document.getElementById("facil")
 medio = document.getElementById("medio")
@@ -15,6 +15,11 @@ const brickleft = 0;
 const anchoraqueta = 95;
 const altoraqueta = 10;
 const radio = 10;
+
+// Efectos de sonido
+const golperaqueta = new Audio('golperaqueta.wav');
+const golpelado = new Audio('golpelado.wav');
+const golpeladrillo = new Audio('golpeladrillo.wav');
 
 // Estilo de la letra
 ctx.font = "50px CharriotDeluxe";
@@ -55,7 +60,7 @@ function update() {
     // valores iniciales
     raqueta = ( canvas.width - anchoraqueta ) / 2;
     x = canvas.width / 2;
-    y = canvas.height - 30;
+    y = canvas.height - 40;
     jugar = false;
     puntuacion = 0;
     vidas = 3;
@@ -130,6 +135,7 @@ function romperladrillos() {
         var b = LADRILLO[i][j];
             if ( b.visible == 1 ) {
                 if ( x > b.x && x < b.x + ancholadrillo && y > b.y && y < b.y + alturaladrillo ) {
+                    golpeladrillo.play();
                     vely = -vely;
                     b.visible = 0;
                     puntuacion++;
@@ -146,18 +152,24 @@ function romperladrillos() {
 
 function drawraqueta() {
     ctx.beginPath();
-    ctx.rect( raqueta, canvas.height - altoraqueta, anchoraqueta, altoraqueta );
-    ctx.fillStyle = "white";
+    ctx.rect( raqueta, canvas.height - 20, anchoraqueta, altoraqueta );
+    ctx.fillStyle = "blue";
     ctx.fill();
     ctx.closePath();
 }
 
 function drawpuntuacion() {
+    ctx.fillStyle = "white";
     ctx.fillText( "00" + puntuacion, 10, 40 );
-}
 
+}
+// Points are 1 point for yellow, 3 for the green, 7 for red, orange 5. To make the game more challenging,
+//  the speed of the game increases after 4 hits and again at 12 hits and to the highest speeds in
+//   orange and red rows. The hammer decreases by half the size when the red row is broken through. 
 function drawvidas() {
+    ctx.fillStyle = "white";
     ctx.fillText( "00" + vidas, canvas.width - 90, 40 );
+
 }
 
 function drawladrillos() {
@@ -199,14 +211,17 @@ function draw(){
 
     if (jugar){
         if ( x + velx > canvas.width - radio || x + velx < radio ) {
+            golpelado.play();
             velx = -velx;
         }
 
-        if ( y + vely < 40 ) {
+        if ( y + vely < 50 ) {
+            golpelado.play();
             vely = -vely;
         } else if ( y + vely > canvas.height - (radio + altoraqueta) ) {
             if ( x > raqueta && x < raqueta + anchoraqueta ) {
-            vely = -vely;
+                golperaqueta.play();
+                vely = -vely;
             } else {
                 vidas--;
                 if ( !vidas ) {

@@ -11,10 +11,11 @@ canvas {
   font-size: 40px;
 }
 
+
 body{
   text-align: center;
   border-top-width: 30px;
-  background-color: gray;
+  background-color: grey;
 }
 
 @font-face{
@@ -32,7 +33,7 @@ body{
   width: 70px;
   color: black;
   background: gray; /* Old browsers */
-  background: -moz-linear-gradient(left, rgb(237,47,47) 0%, rgb(252,107,28) 25%, rgb(37,186,52) 50%, rgb(227,237,47) 75%) ;
+  background: -moz-linear-gradient(left, rgb(237,47,47) 0%, rgb(252,107,28) 25%, rgb(37,186,52) 50%, rgb(227,237,47) 75%);
   background: -webkit-linear-gradient(left, rgb(237,47,47) 0%, rgb(252,107,28) 25%, rgb(37,186,52) 50%, rgb(227,237,47) 75%);
   background: linear-gradient(to right,rgb(237,47,47) 0%, rgb(252,107,28) 25%, rgb(37,186,52) 50%, rgb(227,237,47) 75%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6b1c', endColorstr='#2a4ad6',GradientType=6 );
