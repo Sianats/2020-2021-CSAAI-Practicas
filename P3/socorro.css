@@ -9,13 +9,18 @@ canvas {
   border-style: solid;
   font: "CharriotDeluxe" white;
   font-size: 40px;
+  box-shadow: 450px 0 black,
+  -450px 0 black,
+   450px -20px black,
+   -450px -20px black,
+   0 -20px black;
 }
 
 
 body{
   text-align: center;
   border-top-width: 30px;
-  background-color: grey;
+  background-color:whitesmoke;
 }
 
 @font-face{

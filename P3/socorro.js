@@ -137,7 +137,9 @@ function romperladrillos() {
                 if ( x > b.x && x < b.x + ancholadrillo && y > b.y && y < b.y + alturaladrillo ) {
                     golpeladrillo.play();
                     vely = -vely;
+                    // Desaparece
                     b.visible = 0;
+                    // Valores de puntuación variables dependiendo del color de ladrillo
                     if (i == 0 || i == 1){
                         puntuacion += 7;
                     } else if (i == 2 || i == 3){
@@ -147,6 +149,7 @@ function romperladrillos() {
                     } else if (i == 6 || i == 7){
                         puntuacion += 1;
                     }
+                    // Si ganas
                     if ( puntuacion == columnas * filas ) {
                         jugar = false;
                         ctx.fillText( 'You won!', 150, 350 );
@@ -191,7 +194,7 @@ function drawladrillos() {
                 LADRILLO[i][j].y = y1;
                 ctx.beginPath();
                 ctx.rect( x1, y1, ancholadrillo, alturaladrillo );
-                ctx.fillStyle = "white";
+                // Colores de ladrillos distintos
                 if (i == 0 || i == 1){
                     ctx.fillStyle = "red";
                 } else if (i == 2 || i == 3){
