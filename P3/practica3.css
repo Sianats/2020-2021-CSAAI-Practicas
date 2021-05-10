@@ -17,12 +17,13 @@ canvas {
 }
 
 table{
-  margin-left: 410px;
-  margin-top:-50px;
+  margin-left: 250px;
+  margin-top: -80px;
   border-spacing: 60px;
 }
 
 body{
+  font-family: CharriotDeluxe;
   text-align: center;
   border-top-width: 30px;
   background-color:whitesmoke;
@@ -34,6 +35,7 @@ body{
 }
 
 .botones{
+  font-family: CharriotDeluxe;
   align-items: center;
   border-radius: 50%;
   border: 0;
