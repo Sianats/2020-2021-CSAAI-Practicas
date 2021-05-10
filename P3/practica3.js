@@ -52,6 +52,8 @@ function update() {
     ctx.fillText('seleccione modo juego', 150, 350);
     // No podemos restablecer el juego mientras jugamos
     canvas.removeEventListener( 'click', restart, false );
+    // No se mueve la raqueta con el ratón al principio
+    document.removeEventListener( "mousemove", moverconraton, false );
 
     // Array para los ladrillos
     LADRILLO = [];
@@ -249,6 +251,7 @@ function draw(){
 
     // Si pulsas el espacio, que empiece el juego
     if (jugar){
+        document.addEventListener( "mousemove", moverconraton, false );
         if ( x + velx > canvas.width - radio || x + velx < radio ) {
             golpelado.play();
             velx = -velx;
