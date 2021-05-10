@@ -10,12 +10,17 @@ canvas {
   font: "CharriotDeluxe" white;
   font-size: 40px;
   box-shadow: 450px 0 black,
-  -450px 0 black,
-   450px -20px black,
-   -450px -20px black,
-   0 -20px black;
+    -450px 0 black,
+    450px -20px black,
+    -450px -20px black,
+    0 -20px black;
 }
 
+table{
+  margin-left: 410px;
+  margin-top:-50px;
+  border-spacing: 60px;
+}
 
 body{
   text-align: center;

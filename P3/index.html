@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="practica3.css">
-    <script src="practica3.js" defer></script>
-    
-    <title>Socorro</title>
-</head>
-<body>
-    <canvas id="canvas" ></canvas><br>
-    <h2>Modo de Juego:</h2>
-    <button id="facil" class="botones">Fácil</button>
-    <button id="medio" class="botones">Medio</button>
-    <button id="dificil" class="botones">Difícil</button>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="practica3.css">
+        <script src="practica3.js" defer></script>
+        <title>Breakout</title>
+    </head>
+
+    <body>
+        <canvas id="canvas" ></canvas><br>
+        <h2>Modo de Juego:</h2>
+        <button id="facil" class="botones">Fácil</button>
+        <button id="medio" class="botones">Medio</button>
+        <button id="dificil" class="botones">Difícil</button>
+        <table>
+            <td class="espacio">
+                <h2>·Comandos:</h2>
+                <p>Pulse 'espacio' para comenzar el juego</p>
+                <p>Mueva el ratón en el canvas para mover la raqueta</p>
+                <p>Pulse la flecha derecha para mover la raqueta hacia la derecha</p>
+                <p>Pulse la flecha izquierda para mover la raqueta hacia la izquierda</p>
+            </td>
+
+            <td>
+                <h2>·Instrucciones:</h2>
+                <p>Elija un modo de juego antes de comenzar</p>
+                <p>Al terminar el juego, haga click en canvas para reiniciarlo</p>
+                <p>Al avanzar la puntuación, la raqueta se irá haciendo más pequeña</p>
+                <p>Cada color de ladrillos tiene una puntuación: 1-Amarillo, 3-Verde, 5-Naranja y 7-Rojo</p>
+            </td>
+        </table>
+    </body>
 </html>

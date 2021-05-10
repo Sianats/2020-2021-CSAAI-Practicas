@@ -44,8 +44,12 @@ var vely;
 
 // Se usa la funcion restart al hacer click en canvas
 canvas.addEventListener( 'click', restart, false );
+// Puedes mover la raqueta con el ratón del ordenador
+document.addEventListener( "mousemove", moverconraton, false );
 
 function update() {
+    // Aviso inicial
+    ctx.fillText('seleccione modo juego', 150, 350);
     // No podemos restablecer el juego mientras jugamos
     canvas.removeEventListener( 'click', restart, false );
 
@@ -82,7 +86,6 @@ facil.onclick = () =>{
     facil.onclick = false;
     medio.onclick = false;
     dificil.onclick = false;
-
 }
 
 medio.onclick = () =>{
@@ -91,7 +94,6 @@ medio.onclick = () =>{
     facil.onclick = false;
     medio.onclick = false;
     dificil.onclick = false;
-
 }
 
 dificil.onclick = () =>{
@@ -100,7 +102,6 @@ dificil.onclick = () =>{
     facil.onclick = false;
     medio.onclick = false;
     dificil.onclick = false;
-
 }
 
 // Dependiendo de que tecla pulsemos, tiene una funcion u otra
@@ -124,6 +125,14 @@ document.onkeydown = (e)=> {
         case 32:
             jugar = true;
         break;
+    }
+}
+
+// Función para mover la raqueta también con el ratón
+function moverconraton( e ) {
+    var X = e.clientX - canvas.offsetLeft;
+    if ( X > 0 && X < canvas.width ) {
+        raqueta = X - anchoraqueta / 2;
     }
 }
 
@@ -275,6 +284,11 @@ function draw(){
         ctx.fillStyle = 'white';
         ctx.fillText( 'Game Over', 150, 350 );
         canvas.addEventListener( 'click', restart, false);
+    } else {
+        ctx.fillStyle = 'white';
+        ctx.fillText('Seleccione un', 110, 250);
+        ctx.fillText('modo de juego', 97, 300);
+        ctx.fillText('para comenzar', 85, 350);
     }
 
     // Iniciar la animación
