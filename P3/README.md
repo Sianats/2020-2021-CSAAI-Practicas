@@ -1,1 +1,6 @@
  # Práctica 3
+Instrucciones de mi juego Breakout retro:
+Para sacar, primero has de seleccionar un modo de juego (mejora): fácil, medio o difícil; cada modo tiene una velocidad de bola distinto. Solo has de sacar una vez en el juego, es decir, cuando pierdas una vida, la bola no se quedará parada, sino que el juego seguirá en marcha; por lo que ten cuidado ¡No te despistes o perderás otra vida!.
+Cada color de ladrillo es un valor distinto de puntuación (mejora) donde el amarillo, al ser el más cercano, vale menos y el rojo, al ser el último, tiene la mayor puntuación. Para mover la raqueta se puede hacer uso de las flechas izquierda y derecha del ordenador o se puede usar el ratón (mejora). 
+
+Mejoras no nombradas anteriormente: Se ha añadido el sonido original del juego a los golpes (de raqueta, lado y ladrillo) y, al perder o ganar, puedes restablecer el juego haciendo click en canvas. Otra mejora es que cuando llegas a 1/3 de la puntuación total, la raqueta disminuye, y cuando llegas a 2/3, la raqueta disminuye más. También se ha añadido distintos colores a los ladrillos para que fuera más fiel al juego original (la versión a color).
