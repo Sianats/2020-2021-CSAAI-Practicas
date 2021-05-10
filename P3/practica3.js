@@ -72,8 +72,6 @@ function update() {
     jugar = false;
     puntuacion = 0;
     vidas = 3;
-    izquierda = false;
-    derecha = false;
 
     // Funcion dibujar los elementos
     draw();
