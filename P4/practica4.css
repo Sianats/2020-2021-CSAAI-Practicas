@@ -1,6 +1,9 @@
 #imagesrc {
     display:none;
 }
+ h2{
+     text-align: center;
+ }
 
 /* body{
     background-image: "eivissa.jpg";

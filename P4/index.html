@@ -10,13 +10,17 @@
     <title>Práctica 4</title>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+    
     <!-- <button>Dalt Vila</button> -->
-    <h2>Imagen 1</h2>
-    <span id="origin"><img src="daltvila.jpg" id="imagen" width="1000px" height="500px"></span>
-    <!-- <h2>Imagen 2</h2>
-    <button>Es Vedrà</button><img src="esvedrà.jpg"> -->
-    <button>Colores</button>
+    <table>    
+    <td><h2>Imagen 1</h2>
+    <span id="origin"><img src="daltvila.png" id="daltvila"></span></td>
+    <td><h2>Imagen 2</h2>
+    <!-- <button>Es Vedrà</button> -->
+    <img src="esvedrà.png" id="esvedra"></td>  
+    
+<td>
+    <button id="colores">Colores</button>
     <button id="escalagrises">Escala de grises</button>
     <p>Rojo</p>
     <input type="range" id="R_deslizador" min="0" max="255" value="255"/>
@@ -24,6 +28,7 @@
     <input type="range" id="G_deslizador" min="0" max="255" value="255"/>
     <p id="G_value">00</p>
     <input type="range" id="B_deslizador" min="0" max="255" value="255"/>
-    <p id="B_value">00</p>
+    <p id="B_value">00</p></td></table>
+    <canvas id="canvas"></canvas>
 </body>
 </html>

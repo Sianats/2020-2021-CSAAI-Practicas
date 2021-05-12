@@ -2,19 +2,39 @@ console.log("Ejecutando JS....")
 
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
-const img = document.getElementById('imagen');
+const daltvila = document.getElementById('daltvila');
+const esvedra = document.getElementById('esvedra');
 const ctx = canvas.getContext('2d');
 
 //-- Acceso al deslizador
 const R_deslizador = document.getElementById('R_deslizador');
 const G_deslizador = document.getElementById('G_deslizador');
 const B_deslizador = document.getElementById('B_deslizador');
-var escalagrises = document.getElementById('escalagrises')
+var escalagrises = document.getElementById('escalagrises');
+const colores = document.getElementById('colores');
 
 //-- Valor del deslizador
 const R_value = document.getElementById('R_value');
 const G_value = document.getElementById('G_value');
 const B_value = document.getElementById('B_value');
+
+daltvila.onclick = () => {
+  daltvila.onload = function(){
+  };
+  img = daltvila;
+  canvas.width = img.width;
+  canvas.height =  img.height;
+  ctx.drawImage(img, 0,0);
+}
+
+esvedra.onclick = () => {
+  daltvila.onload = function(){
+  };
+  img = esvedra;
+  canvas.width = img.width;
+  canvas.height =  img.height;
+  ctx.drawImage(img, 0,0);
+}
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -34,7 +54,7 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
-
+colores.onclick = () =>{
   //-- Funcion de retrollamada del deslizador
   R_deslizador.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
@@ -113,7 +133,7 @@ img.onload = function () {
       //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
   }
-
+}
 
 escalagrises.onclick =()=>{
   ctx.drawImage(img, 0,0);
