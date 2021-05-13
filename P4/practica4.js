@@ -10,14 +10,20 @@ const ctx = canvas.getContext('2d');
 const R_deslizador = document.getElementById('R_deslizador');
 const G_deslizador = document.getElementById('G_deslizador');
 const B_deslizador = document.getElementById('B_deslizador');
+const trans_deslizador = document.getElementById('trans_deslizador');
 const escalagrises = document.getElementById('escalagrises');
+const aparecer = document.getElementById('aparecer');
+const transparencia = document.getElementById('transparencia');
+const trans = document.getElementById('transparente');
 const negativo = document.getElementById('negativo');
+const ruido = document.getElementById('ruido');
 const colores = document.getElementById('colores');
 
 //-- Valor del deslizador
 const R_value = document.getElementById('R_value');
 const G_value = document.getElementById('G_value');
 const B_value = document.getElementById('B_value');
+const trans_value = document.getElementById('trans_value');
 
 daltvila.onclick = () => {
   daltvila.onload = function(){
@@ -56,6 +62,7 @@ esvedra.onclick = () => {
 // };
 
 colores.onclick = () =>{
+  document.getElementById('aparecer').style.display = 'block';
   //-- Funcion de retrollamada del deslizador
   R_deslizador.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
@@ -91,6 +98,7 @@ colores.onclick = () =>{
   }
       //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
+
   }
 
   G_deslizador.oninput = () => {
@@ -126,11 +134,11 @@ colores.onclick = () =>{
   }
       //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
-  }
+}
 
   B_deslizador.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
-    B_value.innerHTML = G_deslizador.value;
+    B_value.innerHTML = B_deslizador.value;
 
     //-- Situar la imagen original en el canvas
     //-- No se han hecho manipulaciones todavia
@@ -165,6 +173,7 @@ colores.onclick = () =>{
 }
 
 escalagrises.onclick =()=>{
+  document.getElementById('aparecer').style.display = 'none';
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
@@ -179,6 +188,7 @@ escalagrises.onclick =()=>{
 }
 
 negativo.onclick =()=>{
+  document.getElementById('aparecer').style.display = 'none';
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
@@ -189,6 +199,23 @@ negativo.onclick =()=>{
       data[i+2] = 255 - data[i+2]; 
   }
   ctx.putImageData(imgData, 0, 0);
+}
+
+trans.onclick = () => {
+  document.getElementById('aparecer').style.display = 'none';
+  document.getElementById('transparencia').style.display = 'block';
+  trans_deslizador.oninput = () => {
+    trans_value.innerHTML = trans_deslizador.value;
+    ctx.drawImage(img, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data
+    umbral = trans_deslizador.value
+    for (let i = 0; i < data.length; i+=4) {
+      if (data[i+3] > umbral) //-- Si es mayor que el umbralm le asignamos el valor umbral
+        data[i+3] = umbral;
+      }
+    ctx.putImageData(imgData, 0, 0);
+  }
 }
 
 // button.onclick = () => {
