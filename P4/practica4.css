@@ -1,10 +1,26 @@
 #imagesrc {
     display:none;
+    align-items: center;
 }
- h2{
-     text-align: center;
- }
 
-/* body{
-    background-image: "eivissa.jpg";
-} */
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 175px;
+}
+
+.box{
+    background-color: 10px 0 0 blue;
+}
+
+canvas{
+    margin-left: 660px;
+}
+
+h2{
+     text-align: center;
+}
+
+body{
+    background-image: url("eivissa.jpg");
+} 
