@@ -18,6 +18,7 @@ const trans = document.getElementById('transparente');
 const negativo = document.getElementById('negativo');
 const ruido = document.getElementById('ruido');
 const colores = document.getElementById('colores');
+const sepia = document.getElementById('sepia');
 
 //-- Valor del deslizador
 const R_value = document.getElementById('R_value');
@@ -43,26 +44,9 @@ esvedra.onclick = () => {
   ctx.drawImage(img, 0,0);
 }
 
-//-- Función de retrollamada de imagen cargada
-//-- La imagen no se carga instantaneamente, sino que
-//-- lleva un tiempo. Sólo podemos acceder a ella una vez
-//-- que esté totalmente cargada
-// img.onload = function () {
-
-//   //-- Se establece como tamaño del canvas el mismo
-//   //-- que el de la imagen original
-//   canvas.width = img.width;
-//   canvas.height = img.height;
-
-//   //-- Situar la imagen original en el canvas
-//   //-- No se han hecho manipulaciones todavia
-//   ctx.drawImage(img, 0,0);
-
-//   console.log("Imagen lista...");
-// };
-
 colores.onclick = () =>{
   document.getElementById('aparecer').style.display = 'block';
+  document.getElementById('transparencia').style.display = 'none';
   //-- Funcion de retrollamada del deslizador
   R_deslizador.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
@@ -174,6 +158,7 @@ colores.onclick = () =>{
 
 escalagrises.onclick =()=>{
   document.getElementById('aparecer').style.display = 'none';
+  document.getElementById('transparencia').style.display = 'none';
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
@@ -189,6 +174,7 @@ escalagrises.onclick =()=>{
 
 negativo.onclick =()=>{
   document.getElementById('aparecer').style.display = 'none';
+  document.getElementById('transparencia').style.display = 'none';
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   let data = imgData.data;
@@ -216,6 +202,46 @@ trans.onclick = () => {
       }
     ctx.putImageData(imgData, 0, 0);
   }
+}
+
+sepia.onclick = () =>{
+  document.getElementById('transparencia').style.display = 'none';
+  document.getElementById('aparecer').style.display = 'none';
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+
+  for (let i = 0; i < data.length; i+=4) {
+      var r = data[i];
+      var g = data[i+1];
+      var b = data[i+2];
+
+      data[i] = 255 - r;
+      data[i+1] = 255 - g;
+      data[i+2] = 255 - b;
+
+      data[i] = ( r * 0.393 ) + ( g * 0.769 ) + ( b * 0.189 );
+      data[i+1] = ( r * 0.349 ) + ( g * 0.686 ) + ( b * 0.168 );
+      data[i+2] = ( r * 0.272 ) + ( g * 0.534 ) + ( b * 0.131 );
+  }
+
+  ctx.putImageData( imgData, 0, 0 );
+}
+
+ruido.onclick =()=>{
+  document.getElementById('aparecer').style.display = 'none';
+  document.getElementById('transparencia').style.display = 'none';
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+  
+  for (let i = 0; i < data.length; i+=4) {
+    let numero= 0.6 + Math.random() * 0.8;
+      data[i] = numero*data[i];
+      data[i+1] = numero*data[i+1]; 
+      data[i+2] = numero*data[i+2]; 
+  }
+  ctx.putImageData(imgData, 0, 0);
 }
 
 // button.onclick = () => {
