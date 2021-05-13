@@ -70,14 +70,24 @@ colores.onclick = () =>{
     //-- Obtener el array con todos los píxeles
     let data = imgData.data
 
-    //-- Obtener el umbral de rojo del desliador
-    umbral = R_deslizador.value
+    //-- Obtener el umbral del desliador
+    umbralR = R_deslizador.value;
+    umbralG = G_deslizador.value;
+    umbralB = B_deslizador.value;
+
 
     //-- Filtrar la imagen según el nuevo umbral
-    for (let i = 0; i < data.length; i+=4) {
-      if (data[i] > umbral)
-        data[i] = umbral;
-    }
+    for (var i = 0; i < data.length; i+=4) {
+      if (data[i] > umbralR){
+        data[i] = umbralR;
+      }
+      if (data[i+1] > umbralG){
+        data[i+1] = umbralG;
+      }
+      if (data[i+2] > umbralB){
+        data[i+2] = umbralB;
+      }
+  }
       //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
   }
@@ -96,14 +106,23 @@ colores.onclick = () =>{
     //-- Obtener el array con todos los píxeles
     let data = imgData.data
 
-    //-- Obtener el umbral de rojo del desliador
-    umbral = G_deslizador.value
+    //-- Obtener el umbral del desliador
+    umbralR = R_deslizador.value;
+    umbralG = G_deslizador.value;
+    umbralB = B_deslizador.value;
 
     //-- Filtrar la imagen según el nuevo umbral
-    for (let i = 0; i < data.length; i+=4) {
-      if (data[i] > umbral)
-        data[i+1] = umbral;
-    }
+    for (var i = 0; i < data.length; i+=4) {
+      if (data[i] > umbralR){
+        data[i] = umbralR;
+      }
+      if (data[i+1] > umbralG){
+        data[i+1] = umbralG;
+      }
+      if (data[i+2] > umbralB){
+        data[i+2] = umbralB;
+      }
+  }
       //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
   }
@@ -122,14 +141,23 @@ colores.onclick = () =>{
     //-- Obtener el array con todos los píxeles
     let data = imgData.data
 
-    //-- Obtener el umbral de rojo del desliador
-    umbral = B_deslizador.value
+    //-- Obtener el umbral del desliador
+    umbralR = R_deslizador.value;
+    umbralG = G_deslizador.value;
+    umbralB = B_deslizador.value;
 
     //-- Filtrar la imagen según el nuevo umbral
-    for (let i = 0; i < data.length; i+=4) {
-      if (data[i] > umbral)
-        data[i+2] = umbral;
-    }
+    for (var i = 0; i < data.length; i+=4) {
+      if (data[i] > umbralR){
+        data[i] = umbralR;
+      }
+      if (data[i+1] > umbralG){
+        data[i+1] = umbralG;
+      }
+      if (data[i+2] > umbralB){
+        data[i+2] = umbralB;
+      }
+  }
       //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
   }

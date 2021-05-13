@@ -9,15 +9,11 @@ table{
     margin-top: 175px;
 }
 
-.box{
-    background-color: 10px 0 0 blue;
-}
-
 canvas{
     margin-left: 660px;
 }
 
-h2{
+h1{
      text-align: center;
 }
 
