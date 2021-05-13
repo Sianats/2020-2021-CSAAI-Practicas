@@ -19,25 +19,39 @@ const negativo = document.getElementById('negativo');
 const ruido = document.getElementById('ruido');
 const colores = document.getElementById('colores');
 const sepia = document.getElementById('sepia');
+const mirror = document.getElementById('mirror');
+const flip = document.getElementById('flip');
+const restart = document.getElementById('reset');
+const botones = document.getElementById('filtros');
+const manipulada = document.getElementById('manipulada');
+const mensaje = document.getElementById('inicio');
 
 //-- Valor del deslizador
 const R_value = document.getElementById('R_value');
 const G_value = document.getElementById('G_value');
 const B_value = document.getElementById('B_value');
 const trans_value = document.getElementById('trans_value');
+var reves = false;
+var reflejo = false;
 
 daltvila.onclick = () => {
-  daltvila.onload = function(){
-  };
+  document.getElementById('filtros').style.display = 'block';
+  document.getElementById('inicio').style.display = 'none';
+  document.getElementById('manipulada').style.display = 'block';
   img = daltvila;
   canvas.width = img.width;
   canvas.height =  img.height;
   ctx.drawImage(img, 0,0);
 }
 
+restart.onclick = () => {
+  document.location.reload();
+}
+
 esvedra.onclick = () => {
-  daltvila.onload = function(){
-  };
+  document.getElementById('filtros').style.display = 'block';
+  document.getElementById('inicio').style.display = 'none';
+  document.getElementById('manipulada').style.display = 'block';
   img = esvedra;
   canvas.width = img.width;
   canvas.height =  img.height;
@@ -45,6 +59,7 @@ esvedra.onclick = () => {
 }
 
 colores.onclick = () =>{
+  ImagenOriginal();
   document.getElementById('aparecer').style.display = 'block';
   document.getElementById('transparencia').style.display = 'none';
   //-- Funcion de retrollamada del deslizador
@@ -157,6 +172,7 @@ colores.onclick = () =>{
 }
 
 escalagrises.onclick =()=>{
+  ImagenOriginal();
   document.getElementById('aparecer').style.display = 'none';
   document.getElementById('transparencia').style.display = 'none';
   ctx.drawImage(img, 0,0);
@@ -173,6 +189,7 @@ escalagrises.onclick =()=>{
 }
 
 negativo.onclick =()=>{
+  ImagenOriginal();
   document.getElementById('aparecer').style.display = 'none';
   document.getElementById('transparencia').style.display = 'none';
   ctx.drawImage(img, 0,0);
@@ -188,6 +205,7 @@ negativo.onclick =()=>{
 }
 
 trans.onclick = () => {
+  ImagenOriginal();
   document.getElementById('aparecer').style.display = 'none';
   document.getElementById('transparencia').style.display = 'block';
   trans_deslizador.oninput = () => {
@@ -205,6 +223,7 @@ trans.onclick = () => {
 }
 
 sepia.onclick = () =>{
+  ImagenOriginal();
   document.getElementById('transparencia').style.display = 'none';
   document.getElementById('aparecer').style.display = 'none';
   ctx.drawImage(img, 0,0);
@@ -228,7 +247,19 @@ sepia.onclick = () =>{
   ctx.putImageData( imgData, 0, 0 );
 }
 
+function ImagenOriginal(){
+  if(reves == true){
+    flip();
+    reves = false;
+  }
+  if(reflejo == true){
+    mirror();
+    reflejo = false;
+  }
+}
+
 ruido.onclick =()=>{
+  ImagenOriginal();
   document.getElementById('aparecer').style.display = 'none';
   document.getElementById('transparencia').style.display = 'none';
   ctx.drawImage(img, 0,0);
@@ -244,13 +275,24 @@ ruido.onclick =()=>{
   ctx.putImageData(imgData, 0, 0);
 }
 
-// button.onclick = () => {
-//   //-- Cambiar de color el texto
-//   if (button_test.style.color == "") {
-//       button_test.style.color = "green";
-//   } else {
-//       button_test.style.color = "";
-//   }
-// }
+mirror.onclick = () =>{
+  document.getElementById('aparecer').style.display = 'none';
+  document.getElementById('transparencia').style.display = 'none';
+  reflejo = true;
+  ctx.drawImage(img, 0,0);
+  ctx.translate(2*(img.width)/2,0);
+  ctx.scale(-1,1);
+  ctx.drawImage(img, 0, 0);
+}
+
+flip.onclick = () =>{
+  document.getElementById('aparecer').style.display = 'none';
+  document.getElementById('transparencia').style.display = 'none';
+  reves = true;
+  ctx.drawImage(img, 0,0);
+  ctx.translate(0,2*(img.height)/2);
+  ctx.scale(1,-1);
+  ctx.drawImage(img, 0, 0);
+}
 
 console.log("Fin...");
