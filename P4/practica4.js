@@ -22,7 +22,7 @@ const sepia = document.getElementById('sepia');
 const mirror = document.getElementById('mirror');
 const flip = document.getElementById('flip');
 const restart = document.getElementById('reset');
-const botones = document.getElementById('filtros');
+const botones = document.getElementsByClassName('filtros');
 const manipulada = document.getElementById('manipulada');
 const mensaje = document.getElementById('inicio');
 
@@ -36,6 +36,7 @@ var reflejo = false;
 
 daltvila.onclick = () => {
   document.getElementById('filtros').style.display = 'block';
+  document.getElementById('reset').style.display = 'block';
   document.getElementById('inicio').style.display = 'none';
   document.getElementById('manipulada').style.display = 'block';
   img = daltvila;
@@ -50,6 +51,7 @@ restart.onclick = () => {
 
 esvedra.onclick = () => {
   document.getElementById('filtros').style.display = 'block';
+  document.getElementById('reset').style.display = 'block';
   document.getElementById('inicio').style.display = 'none';
   document.getElementById('manipulada').style.display = 'block';
   img = esvedra;
