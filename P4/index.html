@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="taniteivissa.jpg">
-    <link rel="stylesheet" href="practica4.css">
-    <script src="practica4.js" defer></script>
-    <title>Práctica 4</title>
-</head>
-<body>
-    
-    <!-- <button>Dalt Vila</button> -->
-    <box id="box"><table>    
-    <td><h1>Dalt Vila</h1>
-    <img src="daltvila.png" id="daltvila"></td>
-    <td><h1>Es Vedrà</h1>
-    <!-- <button>Es Vedrà</button> -->
-    <img src="esvedrà.png" id="esvedra"></td>  
-    
-<td>
-    <button id="colores">Colores</button>
-    <button id="escalagrises">Escala de grises</button>
-    <p>Rojo</p>
-    <input type="range" id="R_deslizador" min="0" max="255" value="255"/>
-    <p id="R_value">00</p>
-    <input type="range" id="G_deslizador" min="0" max="255" value="255"/>
-    <p id="G_value">00</p>
-    <input type="range" id="B_deslizador" min="0" max="255" value="255"/>
-    <p id="B_value">00</p></td></table>
-    <canvas id="canvas"></canvas>
-</box>
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="taniteivissa.jpg">
+        <link rel="stylesheet" href="practica4.css">
+        <script src="practica4.js" defer></script>
+        <title>Práctica 4</title>
+    </head>
+
+    <body>
+        <div class="box">
+            <table>   
+                <td>
+                    <h1>Dalt Vila</h1>
+                    <span class="seleccion"><img src="daltvila.png" id="daltvila" class="seleccion"></span>
+                </td>
+
+                <td>
+                    <h1>Es Vedrà</h1>
+                    <img src="esvedrà.png" id="esvedra" class="seleccion">
+                </td>  
+                
+                <td>
+                    <button id="negativo">Negativo</button><br>
+                    <button id="escalagrises">Escala de grises</button><br>
+                    <button id="colores">Colores</button><br>
+                    R<input type="range" id="R_deslizador" min="0" max="255" value="255"/>
+                    <p id="R_value">255</p>
+                    G<input type="range" id="G_deslizador" min="0" max="255" value="255"/>
+                    <p id="G_value">255</p>
+                    B<input type="range" id="B_deslizador" min="0" max="255" value="255"/>
+                    <p id="B_value">255</p><br>
+                </td>
+            </table>
+            
+            <h2>Imagen manipulada</h2>
+            <canvas id="canvas"></canvas>
+        </div>
+    </body>
 </html>

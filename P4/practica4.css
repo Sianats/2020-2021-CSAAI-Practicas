@@ -3,20 +3,51 @@
     align-items: center;
 }
 
+ .box{
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(255, 235, 205, 0.8);
+    width: 1200px;
+    height: 800px;
+    margin-top: auto;
+    margin-bottom: auto;
+} 
+
+.seleccion{
+    opacity: 0.8;
+}
+
+.seleccion:hover{
+    opacity: 1;
+}
+
+p{
+    text-align: center;
+}
+
 table{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 175px;
+    margin-top: 100px;
+    border-spacing: 60px;
+    
 }
 
 canvas{
-    margin-left: 660px;
+    margin-left: 290px;
 }
 
 h1{
-     text-align: center;
+    text-align: center;
 }
 
-body{
-    background-image: url("eivissa.jpg");
+h2{
+    margin-top: -40px;
+    font-size: 33px;
+    margin-left: 350px;
+}
+
+body{background-image: url("mar.png");
+    
+    
 } 

@@ -10,7 +10,8 @@ const ctx = canvas.getContext('2d');
 const R_deslizador = document.getElementById('R_deslizador');
 const G_deslizador = document.getElementById('G_deslizador');
 const B_deslizador = document.getElementById('B_deslizador');
-var escalagrises = document.getElementById('escalagrises');
+const escalagrises = document.getElementById('escalagrises');
+const negativo = document.getElementById('negativo');
 const colores = document.getElementById('colores');
 
 //-- Valor del deslizador
@@ -173,6 +174,19 @@ escalagrises.onclick =()=>{
       data[i] = brillo;
       data[i+1] = brillo; 
       data[i+2] = brillo; 
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+
+negativo.onclick =()=>{
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+
+  for (let i = 0; i < data.length; i+=4) {
+      data[i] = 255 - data[i];
+      data[i+1] = 255- data[i+1]; 
+      data[i+2] = 255 - data[i+2]; 
   }
   ctx.putImageData(imgData, 0, 0);
 }
