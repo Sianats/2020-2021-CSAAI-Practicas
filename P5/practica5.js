@@ -8,15 +8,20 @@ const btn_video2 = document.getElementById("btn_video2");
 const btn_video3 = document.getElementById("btn_video3");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
-
+const bucle = document.getElementById("bucle");
+const parar = document.getElementById("parar");
+var bucl;
 
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
 directo.height=200;
+
 video1.width=200;  
 video1.height=100;
+
 video2.width=200;  
 video2.height=100;
+
 video3.width=200;  
 video3.height=100;
 
@@ -81,4 +86,17 @@ btn_video3.onclick = () => {
     directo.currentTime = video3.currentTime;
     directo.play();
     directo.poster=null;
+};
+
+bucle.onclick = () => {
+    bucl = directo.currentTime;
+    var time = setInterval(tiempo, 5000);
+    function tiempo(){
+      directo.currentTime = bucl;
+    }
+
+    parar.onclick = () => {
+        clearInterval(time);
+        bucl = directo.currentTime;
+    }
 };
