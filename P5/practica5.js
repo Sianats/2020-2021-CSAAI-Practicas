@@ -12,6 +12,8 @@ const bucle = document.getElementById("bucle");
 const parar = document.getElementById("parar");
 const mute = document.getElementById("mute");
 const unmute = document.getElementById("unmute");
+const pause = document.getElementById("pause");
+const play = document.getElementById("play");
 var bucl;
 
 //-- Establecer las dimensiones de los vídeos
@@ -108,4 +110,12 @@ mute.onclick = () =>{
  unmute.onclick = () =>{
      directo.muted = false;
  }
+};
+
+pause.onclick = () =>{
+    directo.pause();
+}
+
+play.onclick = () =>{
+    directo.play();
 }
