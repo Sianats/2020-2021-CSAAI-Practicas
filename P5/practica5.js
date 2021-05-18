@@ -10,6 +10,8 @@ const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
 const bucle = document.getElementById("bucle");
 const parar = document.getElementById("parar");
+const mute = document.getElementById("mute");
+const unmute = document.getElementById("unmute");
 var bucl;
 
 //-- Establecer las dimensiones de los vídeos
@@ -52,9 +54,9 @@ btn_src_on.onclick = () => {
   video3.play();
 
   //-- Y en silencio...
-  video1.muted;
-  video2.muted;
-  video3.muted;
+  video1.muted = true;
+  video2.muted = true;
+  video3.muted = true;
 
   //-- En la emisión en directo ponemos la imagen de prueba
   directo.poster = TEST_IMAGE_URL;
@@ -100,3 +102,10 @@ bucle.onclick = () => {
         bucl = directo.currentTime;
     }
 };
+
+mute.onclick = () =>{
+ directo.muted = true;
+ unmute.onclick = () =>{
+     directo.muted = false;
+ }
+}
