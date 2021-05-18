@@ -127,15 +127,15 @@ btn_src_on.onclick = () => {
         document.getElementById("video2").disabled=true;
         document.getElementById("video3").disabled=true;
         video1.onclick();
-        setTimeout(video2.onclick, 4000);
-        setTimeout(video3.onclick, 8000);
-        var reinicio = setInterval(change, 11000);
+        setTimeout(video2.onclick, 3000);
+        setTimeout(video3.onclick, 6000);
+        var reinicio = setInterval(change, 9000);
         var segundo;
         var tercero;
         function change() {
             video1.onclick();
-            segundo = setTimeout(video2.onclick, 4000);
-            tercero = setTimeout(video3.onclick, 8000);
+            segundo = setTimeout(video2.onclick, 3000);
+            tercero = setTimeout(video3.onclick, 6000);
         }
 
         pararautomatico.onclick = () => {
