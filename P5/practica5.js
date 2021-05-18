@@ -1,13 +1,15 @@
 //----- Obtener elemento de video y configurarlo
 let directo = document.getElementById("directo");
-const video1 = document.getElementById("video1");
-const video2 = document.getElementById("video2");
-const video3 = document.getElementById("video3");
+var video1 = document.getElementById("video1");
+var video2 = document.getElementById("video2");
+var video3 = document.getElementById("video3");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
 const bucle = document.getElementById("bucle");
 const parar = document.getElementById("parar");
+const automatico = document.getElementById("autom");
+const pararautomatico = document.getElementById("pararautom");
 const mute = document.getElementById("mute");
 document.getElementById("botones").style.display= 'none';
 const unmute = document.getElementById("unmute");
@@ -119,6 +121,32 @@ btn_src_on.onclick = () => {
     play.onclick = () =>{
         directo.play();
     }
+    
+    automatico.onclick = () => {
+        document.getElementById("video1").disabled=true;
+        document.getElementById("video2").disabled=true;
+        document.getElementById("video3").disabled=true;
+        video1.onclick();
+        setTimeout(video2.onclick, 4000);
+        setTimeout(video3.onclick, 8000);
+        var reinicio = setInterval(change, 11000);
+        var segundo;
+        var tercero;
+        function change() {
+            video1.onclick();
+            segundo = setTimeout(video2.onclick, 4000);
+            tercero = setTimeout(video3.onclick, 8000);
+        }
+
+        pararautomatico.onclick = () => {
+            clearTimeout(segundo);
+            clearTimeout(tercero);
+            clearInterval(reinicio);
+            document.getElementById("video1").disabled=false;
+            document.getElementById("video2").disabled=false;
+            document.getElementById("video3").disabled=false;
+        }
+    }
 };
 
 btn_src_off.onclick = () =>{
@@ -132,4 +160,5 @@ btn_src_off.onclick = () =>{
     video2.poster = TEST_IMAGE_URL;
     video3.poster = TEST_IMAGE_URL;
 }
+
 
