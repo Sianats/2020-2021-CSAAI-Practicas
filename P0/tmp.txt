@@ -1,0 +1,1 @@
+Este fichero es una prueba para aprender a borrar ficheros en el repositorio
