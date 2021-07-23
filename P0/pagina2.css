@@ -1,0 +1,120 @@
+@font-face{
+    font-family:gill;
+    src: url("gill-new-antique.ttf");
+}
+
+@font-face{
+    font-family:academia;
+    src: url("academia-italic.ttf");
+}
+
+@font-face{
+    font-family:time;
+    src: url("times-new-roman-327-monotype-italic.ttf");
+}
+.box{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color:rgb(255, 235, 205, 0.8);
+    width: 18cm;
+    height: 27.5cm;
+    border-radius: 2%;
+} 
+
+.seleccion{
+    opacity: 0.8;
+}
+
+.seleccion:hover{
+    opacity: 1;
+}
+
+p{
+    text-align: left;
+}
+
+.table1{
+    margin-left: none;
+    margin-right: none;
+    margin-top: 0cm;
+    border-spacing: 60px;
+}
+
+table{
+    border-spacing: 30px;
+}
+
+canvas{
+    margin-left: 290px;
+    margin-top: -10px;
+}
+
+h1{
+    font-style:normal;
+    font-family: time;
+    margin-left: 0.5cm;
+    text-align: left;
+    line-height: 5px;
+}
+
+.pie{
+    line-height: 50px;
+    font-size: 20px;
+    font-family: gill;
+    margin-left: 1cm;
+    margin-right: 0.6cm;
+    margin-top: -5px;
+    text-align: center; 
+}
+
+
+p{
+    line-height: 40px;
+    font-size: 22px;
+    font-family: gill;
+    margin-left: 0.5cm;
+    margin-right: 0.6cm;
+    text-align: left;
+}
+
+.p1{
+    line-height: 40px;
+    font-size: 22px;
+    font-family: gill;
+    margin-left: 0.5cm;
+    margin-right: 0.6cm;
+    text-align: left;
+}
+
+.p2{
+    font-size: 20px;
+    text-align: right;
+}
+
+h2{
+    font-family: gill;
+    margin-left: 0.5cm;
+    text-align: left;
+}
+
+.IVA{
+    line-height: 30px;
+    font-size: 20px;
+    margin-top: 120px;
+    font-family: gill;
+    margin-left: 0.5cm;
+    margin-right: 0.6cm;
+    text-align: center;
+}
+
+.fondo{
+    background-image: url("espa1\ \(2\)\ \(1\).jpg");
+    max-width: 21cm;
+    min-width: 21cm;
+    min-height: 29.7cm;
+    max-height: 29.7cm;
+    margin-top: 1.1cm;
+    margin-bottom: 1.1cm;
+} 

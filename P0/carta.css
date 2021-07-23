@@ -1,0 +1,19 @@
+@page{
+
+}
+
+body{
+        width: 297mm;
+    background-image: url("ensalada.jpg");
+}
+
+main{
+    margin: none;
+    padding-left: 10px;
+    background-image: url("ensalada.jpg");
+    background-size: 1400px;
+    background-position-y: 515mm;
+    background-position-x: 1800mm;
+    max-width: 200mm;
+    min-width: 130mm;
+}
